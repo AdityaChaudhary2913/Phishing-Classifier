@@ -1,0 +1,5 @@
+1. Check version of conda
+2. conda create -p ./env python=3.8
+3. conda activate ./env
+4. To install requirements.txt: pip install -r requirements.txt
+5. To create requirements.txt: pip3 freeze > requirements.txt
