@@ -1,1 +1,6 @@
 1. Upload dataset to mongodb
+2. Start writing in src
+  2.1 write in logging.py and exception.py
+  2.2 create subfolder files in all subfolders of src
+  2.3 write in constants that whatever folders and database should be create
+  2.4 write for configuration files

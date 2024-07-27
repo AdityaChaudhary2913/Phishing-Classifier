@@ -3,3 +3,13 @@
 3. conda activate ./env
 4. To install requirements.txt: pip install -r requirements.txt
 5. To create requirements.txt: pip3 freeze > requirements.txt
+6. Create setup.py and write default setup code
+7. Now execute "pip3 install -e .", to run setup.py
+8. Create src folder.
+  8.1 components: Data Ingestion, Validation, Transformation, Model training and Evaluation.
+  8.2 configuration: Everything related to mongodb, aws and clouds
+  8.3 data_access: code to fetch data and conversion according to our requirements
+  8.4 constant: every variable info
+  8.5 pipeline: prediction and training pipeline code
+  8.6 utils: how data should be downloaded and saved with the help of logging
+  8.7 create "__init__.py", "exception.py" and "logging.py"
