@@ -6,3 +6,5 @@
   2.4 write for configuration files
   2.5 write in utils folder
 3. cretae new folder config in root directory, where we will be having our model specification and yaml files
+4. now we write in data_access folder
+5. now we write in components folder
