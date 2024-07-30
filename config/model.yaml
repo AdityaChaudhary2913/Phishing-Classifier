@@ -3,15 +3,15 @@ model_selection:
       XGBClassifier:
         search_param_grid:
           max_depth:
-           - 3
-           - 5
-           - 7
-           - 9
-           - 11
+          - 3
+          - 5
+          - 7
+          - 9
+          - 11
           n_estimators:
-           - 50
-           - 100
-           - 130
+          - 50
+          - 100
+          - 130
           random_state:
             - 0
             - 50
