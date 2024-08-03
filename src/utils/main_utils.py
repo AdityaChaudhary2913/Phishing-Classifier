@@ -43,6 +43,17 @@ class MainUtils:
     except Exception as e:
       logging.error(f"Error while saving object: {e}")
       raise CustomException(e, sys) from e
+  
+  @staticmethod
+  def load_object(file_path: str) -> object:
+    logging.info("Entered the load_object method of MainUtils class")
+    try:
+      with open(file_path, "rb") as file_obj:
+        obj = pickle.load(file_obj)
+      logging.info("Exited the load_object method of MainUtils class")
+      return obj
+    except Exception as e:
+      raise CustomException(e, sys) from e
     
   @staticmethod
   def upload_file(fromFileName, toFileName, bucketName):

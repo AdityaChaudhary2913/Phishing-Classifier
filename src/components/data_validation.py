@@ -51,12 +51,8 @@ class DataValidation:
   def validate_file_name(self, file_path: str, length_of_date_stamp: int, length_of_time_stamp: int) -> bool:
     try:
       file_name = os.path.basename(file_path)
-      regex = "['phising']+['\_'']+[\d_]+[\d]+\.csv"
-      filename_validation_status = False
-      if re.match(regex, file_name):
-        splitAtDot = re.split('.csv', file_name)
-        splitAtDot = (re.split('_', splitAtDot[0]))
-        filename_validation_status = len(splitAtDot[1]) == length_of_date_stamp and len(splitAtDot[2]) == length_of_time_stamp
+      regex = r'^dataset\.csv$'
+      filename_validation_status = bool(re.match(regex, file_name))
       return filename_validation_status
     except Exception as e:
       raise CustomException(e, sys) from e

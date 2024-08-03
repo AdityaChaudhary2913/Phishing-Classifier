@@ -113,8 +113,8 @@ class ModelTrainer:
             custom_model = VisibilityModel(preprocessing_object=preprocessor, trained_model_object=best_model)
             logging.info(f"Saving model at path: {self.model_trainer_config.trained_model_path}")
             os.makedirs(os.path.dirname(self.model_trainer_config.trained_model_path), exist_ok=True)
-            self.utils.save_object(file_path=self.model_trainer_config.trained_model_path, obj=custom_model)
-            self.utils.upload_file(from_filename=self.model_trainer_config.trained_model_path, to_filename="model.pkl", bucket_name=AWS_S3_BUCKET_NAME)
+            self.utils.save_object(filePath=self.model_trainer_config.trained_model_path, obj=custom_model)
+            self.utils.upload_file(fromFileName=self.model_trainer_config.trained_model_path, toFileName="model.pkl", bucketName=AWS_S3_BUCKET_NAME)
             return best_model_score
         except Exception as e:
             raise CustomException(e, sys)

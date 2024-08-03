@@ -26,7 +26,7 @@ class DataIngestion:
       logging.info(f"Exporting data from mongodb")
       raw_batch_files_path = self.data_ingestion_config.dataIngestionDir
       os.makedirs(raw_batch_files_path, exist_ok=True)
-      income_data = PhishingData(database_name=MONGO_DATABASE_NAME)
+      income_data = PhishingData(db_name=MONGO_DATABASE_NAME)
       logging.info(f"Saving exported data into feature store file path: {raw_batch_files_path}")
       for collection_name, dataset in income_data.export_collections_as_dataframe():
           logging.info(f"Shape of {collection_name}: {dataset.shape}")

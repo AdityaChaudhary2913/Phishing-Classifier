@@ -66,7 +66,7 @@ class DataTransformation:
       
       preprocessor_path = self.data_transformation_config.transformed_object_file_path
       os.makedirs(os.path.dirname(preprocessor_path), exist_ok=True)
-      self.utils.save_object(file_path=preprocessor_path, obj=preprocessor) 
+      self.utils.save_object(filePath=preprocessor_path, obj=preprocessor) 
       
       return x_train_scaled, y_train, x_test_scaled, y_test, preprocessor_path     
     except Exception as e:
