@@ -1,0 +1,10 @@
+1. Check of security credentials and create access key for CLI and use them in .env
+2. Open ECR and create a repository, then open the repo and click on view push commands.
+3. Now configure aws using terminal in you project directory 
+    3.1 "aws configure"
+    3.2 give keys, region name and output format as json
+    3.3 create a Dockerfile
+    3.4 now copy first cmmand under view push commands and execute it should give login succeded  else kill terminal and restart it and do it again
+    3.5 now copy second command under it and execute
+    3.6 now copy third command under it and execute
+    3.6 now copy fourth command under it and execute

@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify, request, send_file
+from flask import Flask, render_template, url_for, request, send_file
 from src.exception import CustomException
 from src.logger import logging as lg
 import os,sys
@@ -10,14 +10,14 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return jsonify("home")
+    return render_template('home.html')
 
 @app.route("/train")
 def train_route():
     try:
         train_pipeline = TrainingPipeline()
         train_pipeline.run_pipeline()
-        return "Training Completed."
+        return render_template('training.html')
     except Exception as e:
         raise CustomException(e,sys)
 

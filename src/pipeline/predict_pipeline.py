@@ -50,7 +50,7 @@ class PredictionPipeline:
             input_dataframe: pd.DataFrame = pd.read_csv(input_dataframe_path)
             predictions = self.predict(input_dataframe)
             input_dataframe[prediction_column_name] = [pred for pred in predictions]
-            target_column_mapping = {0:'phising', 1:'safe'}
+            target_column_mapping = {0:'Phishing', 1:'Legitimate'}
             input_dataframe[prediction_column_name] = input_dataframe[prediction_column_name].map(target_column_mapping)
             os.makedirs( self.prediction_file_detail.prediction_output_dirname, exist_ok= True)
             input_dataframe.to_csv(self.prediction_file_detail.prediction_file_path, index= False)
