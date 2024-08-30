@@ -45,11 +45,16 @@
             background-color: #0056b3;
         }
     </style>
+    <script>
+        function displayTrainingMessage() {
+            document.getElementById("status").innerHTML = "Model is training...";
+        }
+    </script>
 </head>
 <body>
     <div class="container">
         <h1>Welcome to Phishing Classifier</h1>
-        <a href="{{ url_for('train_route') }}" class="button">Train the Model</a>
+        <a href="{{ url_for('train_route') }}" id="status" class="button" onclick="displayTrainingMessage()">Train the Model</a>
         <a href="{{ url_for('predict') }}" class="button">Predict</a>
     </div>
 </body>

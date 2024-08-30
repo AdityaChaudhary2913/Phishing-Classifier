@@ -4,6 +4,8 @@ import os
 import pandas as pd
 import numpy as np
 from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.svm import SVC
 from sklearn.metrics import accuracy_score
 from sklearn.naive_bayes import GaussianNB
 from sklearn.compose import ColumnTransformer
@@ -51,7 +53,9 @@ class ModelTrainer:
         self.models = {
             "GaussianNB": GaussianNB(),
             "XGBClassifier": XGBClassifier(objective='binary:logistic'),
-            "LogisticRegression": LogisticRegression()
+            "LogisticRegression": LogisticRegression(),
+            "RandomForestClassifier": RandomForestClassifier(),
+            "SVC": SVC()
         }
 
     def evaluate_models(self, X_train, X_test, y_train, y_test, models):
@@ -114,7 +118,7 @@ class ModelTrainer:
             logging.info(f"Saving model at path: {self.model_trainer_config.trained_model_path}")
             os.makedirs(os.path.dirname(self.model_trainer_config.trained_model_path), exist_ok=True)
             self.utils.save_object(filePath=self.model_trainer_config.trained_model_path, obj=custom_model)
-            self.utils.upload_file(fromFileName=self.model_trainer_config.trained_model_path, toFileName="model.pkl", bucketName=AWS_S3_BUCKET_NAME)
+            # self.utils.upload_file(fromFileName=self.model_trainer_config.trained_model_path, toFileName="model.pkl", bucketName=AWS_S3_BUCKET_NAME)
             return best_model_score
         except Exception as e:
             raise CustomException(e, sys)

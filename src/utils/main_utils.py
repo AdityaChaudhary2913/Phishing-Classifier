@@ -39,6 +39,9 @@ class MainUtils:
     try:
       with open(filePath, 'wb') as file:
         pickle.dump(obj, file)
+        print(f"Object saved successfully at {filePath}")
+      with open("trained_model/model.pkl", 'wb') as file:
+        pickle.dump(obj, file)
       logging.info("Exited the save_object method of MainUtils class")
     except Exception as e:
       logging.error(f"Error while saving object: {e}")

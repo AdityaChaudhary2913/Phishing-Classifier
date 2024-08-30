@@ -1,0 +1,27 @@
+[ 2024-08-30 10:11:31,471 ] 97 werkzeug - WARNING -  * Debugger is active!
+[ 2024-08-30 10:11:31,482 ] 97 werkzeug - INFO -  * Debugger PIN: 119-654-287
+[ 2024-08-30 10:11:40,951 ] 97 werkzeug - INFO - 127.0.0.1 - - [30/Aug/2024 10:11:40] "GET / HTTP/1.1" 200 -
+[ 2024-08-30 10:11:42,389 ] 41 root - INFO - Entered initiate_data_ingestion method of Data_Ingestion class
+[ 2024-08-30 10:11:42,390 ] 26 root - INFO - Exporting data from mongodb
+[ 2024-08-30 10:11:42,390 ] 30 root - INFO - Saving exported data into feature store file path: artifacts/08_30_2024_10_11_30/data_ingestion
+[ 2024-08-30 10:11:45,977 ] 32 root - INFO - Shape of dataset: (11055, 31)
+[ 2024-08-30 10:11:46,025 ] 44 root - INFO - Got the data from mongodb
+[ 2024-08-30 10:11:46,025 ] 45 root - INFO - Exited initiate_data_ingestion method of Data_Ingestion class
+[ 2024-08-30 10:11:46,025 ] 123 root - INFO - Entered initiate_data_validation method of Data_Validation class
+[ 2024-08-30 10:11:46,025 ] 125 root - INFO - Initiated data validation for the dataset
+[ 2024-08-30 10:11:46,026 ] 41 root - INFO - Error in valuesFromSchema in data_validation.py
+[ 2024-08-30 10:11:46,062 ] 48 root - INFO - Entered initiate_data_transformation method of DataTransformation class
+[ 2024-08-30 10:11:46,080 ] 83 root - INFO - Unwanted spaces removal Successful.
+Exited the remove_unwanted_spaces method of the Preprocessor class
+[ 2024-08-30 10:11:46,105 ] 38 root - INFO - Entered the save_object method of MainUtils class
+[ 2024-08-30 10:11:46,119 ] 45 root - INFO - Exited the save_object method of MainUtils class
+[ 2024-08-30 10:11:46,120 ] 101 root - INFO - Splitting training and testing input and target feature
+[ 2024-08-30 10:11:46,120 ] 102 root - INFO - Extracting model config file path
+[ 2024-08-30 10:11:46,120 ] 52 root - INFO - Entered the load_object method of MainUtils class
+[ 2024-08-30 10:11:46,120 ] 56 root - INFO - Exited the load_object method of MainUtils class
+[ 2024-08-30 10:11:46,120 ] 104 root - INFO - Extracting model config file path
+[ 2024-08-30 10:12:11,379 ] 116 root - INFO - Best found model on both training and testing dataset
+[ 2024-08-30 10:12:11,379 ] 118 root - INFO - Saving model at path: artifacts/08_30_2024_10_11_30/model_trainer/trained_model/model.pkl
+[ 2024-08-30 10:12:11,380 ] 38 root - INFO - Entered the save_object method of MainUtils class
+[ 2024-08-30 10:12:11,390 ] 45 root - INFO - Exited the save_object method of MainUtils class
+[ 2024-08-30 10:12:11,401 ] 97 werkzeug - INFO - 127.0.0.1 - - [30/Aug/2024 10:12:11] "GET /train HTTP/1.1" 200 -

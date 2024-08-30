@@ -1,0 +1,79 @@
+[ 2024-08-30 09:52:33,240 ] 97 werkzeug - WARNING -  * Debugger is active!
+[ 2024-08-30 09:52:33,252 ] 97 werkzeug - INFO -  * Debugger PIN: 119-654-287
+[ 2024-08-30 09:52:39,172 ] 97 werkzeug - INFO - 127.0.0.1 - - [30/Aug/2024 09:52:39] "GET / HTTP/1.1" 200 -
+[ 2024-08-30 09:52:40,534 ] 41 root - INFO - Entered initiate_data_ingestion method of Data_Ingestion class
+[ 2024-08-30 09:52:40,534 ] 26 root - INFO - Exporting data from mongodb
+[ 2024-08-30 09:52:40,534 ] 30 root - INFO - Saving exported data into feature store file path: artifacts/08_30_2024_09_52_32/data_ingestion
+[ 2024-08-30 09:52:47,099 ] 32 root - INFO - Shape of dataset: (11055, 31)
+[ 2024-08-30 09:52:47,142 ] 44 root - INFO - Got the data from mongodb
+[ 2024-08-30 09:52:47,142 ] 45 root - INFO - Exited initiate_data_ingestion method of Data_Ingestion class
+[ 2024-08-30 09:52:47,142 ] 123 root - INFO - Entered initiate_data_validation method of Data_Validation class
+[ 2024-08-30 09:52:47,142 ] 125 root - INFO - Initiated data validation for the dataset
+[ 2024-08-30 09:52:47,143 ] 41 root - INFO - Error in valuesFromSchema in data_validation.py
+[ 2024-08-30 09:52:47,173 ] 48 root - INFO - Entered initiate_data_transformation method of DataTransformation class
+[ 2024-08-30 09:52:47,189 ] 83 root - INFO - Unwanted spaces removal Successful.
+Exited the remove_unwanted_spaces method of the Preprocessor class
+[ 2024-08-30 09:52:47,209 ] 38 root - INFO - Entered the save_object method of MainUtils class
+[ 2024-08-30 09:52:47,210 ] 45 root - INFO - Exited the save_object method of MainUtils class
+[ 2024-08-30 09:52:47,210 ] 101 root - INFO - Splitting training and testing input and target feature
+[ 2024-08-30 09:52:47,210 ] 102 root - INFO - Extracting model config file path
+[ 2024-08-30 09:52:47,210 ] 52 root - INFO - Entered the load_object method of MainUtils class
+[ 2024-08-30 09:52:47,210 ] 56 root - INFO - Exited the load_object method of MainUtils class
+[ 2024-08-30 09:52:47,210 ] 104 root - INFO - Extracting model config file path
+[ 2024-08-30 09:54:46,785 ] 41 root - INFO - Entered initiate_data_ingestion method of Data_Ingestion class
+[ 2024-08-30 09:54:46,786 ] 26 root - INFO - Exporting data from mongodb
+[ 2024-08-30 09:54:46,786 ] 30 root - INFO - Saving exported data into feature store file path: artifacts/08_30_2024_09_52_32/data_ingestion
+[ 2024-08-30 09:54:56,128 ] 32 root - INFO - Shape of dataset: (11055, 31)
+[ 2024-08-30 09:54:56,398 ] 44 root - INFO - Got the data from mongodb
+[ 2024-08-30 09:54:56,399 ] 45 root - INFO - Exited initiate_data_ingestion method of Data_Ingestion class
+[ 2024-08-30 09:54:56,400 ] 123 root - INFO - Entered initiate_data_validation method of Data_Validation class
+[ 2024-08-30 09:54:56,405 ] 125 root - INFO - Initiated data validation for the dataset
+[ 2024-08-30 09:54:56,406 ] 41 root - INFO - Error in valuesFromSchema in data_validation.py
+[ 2024-08-30 09:54:56,608 ] 48 root - INFO - Entered initiate_data_transformation method of DataTransformation class
+[ 2024-08-30 09:54:56,685 ] 83 root - INFO - Unwanted spaces removal Successful.
+Exited the remove_unwanted_spaces method of the Preprocessor class
+[ 2024-08-30 09:54:56,834 ] 38 root - INFO - Entered the save_object method of MainUtils class
+[ 2024-08-30 09:54:56,836 ] 45 root - INFO - Exited the save_object method of MainUtils class
+[ 2024-08-30 09:54:56,838 ] 101 root - INFO - Splitting training and testing input and target feature
+[ 2024-08-30 09:54:56,838 ] 102 root - INFO - Extracting model config file path
+[ 2024-08-30 09:54:56,838 ] 52 root - INFO - Entered the load_object method of MainUtils class
+[ 2024-08-30 09:54:56,838 ] 56 root - INFO - Exited the load_object method of MainUtils class
+[ 2024-08-30 09:54:56,838 ] 104 root - INFO - Extracting model config file path
+[ 2024-08-30 09:55:40,918 ] 41 root - INFO - Entered initiate_data_ingestion method of Data_Ingestion class
+[ 2024-08-30 09:55:40,921 ] 26 root - INFO - Exporting data from mongodb
+[ 2024-08-30 09:55:40,921 ] 30 root - INFO - Saving exported data into feature store file path: artifacts/08_30_2024_09_52_32/data_ingestion
+[ 2024-08-30 09:55:42,050 ] 41 root - INFO - Entered initiate_data_ingestion method of Data_Ingestion class
+[ 2024-08-30 09:55:42,051 ] 26 root - INFO - Exporting data from mongodb
+[ 2024-08-30 09:55:42,051 ] 30 root - INFO - Saving exported data into feature store file path: artifacts/08_30_2024_09_52_32/data_ingestion
+[ 2024-08-30 09:55:49,830 ] 32 root - INFO - Shape of dataset: (11055, 31)
+[ 2024-08-30 09:55:50,000 ] 44 root - INFO - Got the data from mongodb
+[ 2024-08-30 09:55:50,000 ] 45 root - INFO - Exited initiate_data_ingestion method of Data_Ingestion class
+[ 2024-08-30 09:55:50,000 ] 123 root - INFO - Entered initiate_data_validation method of Data_Validation class
+[ 2024-08-30 09:55:50,001 ] 125 root - INFO - Initiated data validation for the dataset
+[ 2024-08-30 09:55:50,002 ] 41 root - INFO - Error in valuesFromSchema in data_validation.py
+[ 2024-08-30 09:55:50,110 ] 48 root - INFO - Entered initiate_data_transformation method of DataTransformation class
+[ 2024-08-30 09:55:50,192 ] 83 root - INFO - Unwanted spaces removal Successful.
+Exited the remove_unwanted_spaces method of the Preprocessor class
+[ 2024-08-30 09:55:50,247 ] 38 root - INFO - Entered the save_object method of MainUtils class
+[ 2024-08-30 09:55:50,249 ] 45 root - INFO - Exited the save_object method of MainUtils class
+[ 2024-08-30 09:55:50,252 ] 101 root - INFO - Splitting training and testing input and target feature
+[ 2024-08-30 09:55:50,252 ] 102 root - INFO - Extracting model config file path
+[ 2024-08-30 09:55:50,252 ] 52 root - INFO - Entered the load_object method of MainUtils class
+[ 2024-08-30 09:55:50,252 ] 56 root - INFO - Exited the load_object method of MainUtils class
+[ 2024-08-30 09:55:50,252 ] 104 root - INFO - Extracting model config file path
+[ 2024-08-30 09:55:51,598 ] 32 root - INFO - Shape of dataset: (11055, 31)
+[ 2024-08-30 09:55:51,823 ] 44 root - INFO - Got the data from mongodb
+[ 2024-08-30 09:55:51,824 ] 45 root - INFO - Exited initiate_data_ingestion method of Data_Ingestion class
+[ 2024-08-30 09:55:51,825 ] 123 root - INFO - Entered initiate_data_validation method of Data_Validation class
+[ 2024-08-30 09:55:51,825 ] 125 root - INFO - Initiated data validation for the dataset
+[ 2024-08-30 09:55:51,826 ] 41 root - INFO - Error in valuesFromSchema in data_validation.py
+[ 2024-08-30 09:55:51,951 ] 48 root - INFO - Entered initiate_data_transformation method of DataTransformation class
+[ 2024-08-30 09:55:52,032 ] 83 root - INFO - Unwanted spaces removal Successful.
+Exited the remove_unwanted_spaces method of the Preprocessor class
+[ 2024-08-30 09:55:52,121 ] 38 root - INFO - Entered the save_object method of MainUtils class
+[ 2024-08-30 09:55:52,123 ] 45 root - INFO - Exited the save_object method of MainUtils class
+[ 2024-08-30 09:55:52,124 ] 101 root - INFO - Splitting training and testing input and target feature
+[ 2024-08-30 09:55:52,124 ] 102 root - INFO - Extracting model config file path
+[ 2024-08-30 09:55:52,124 ] 52 root - INFO - Entered the load_object method of MainUtils class
+[ 2024-08-30 09:55:52,125 ] 56 root - INFO - Exited the load_object method of MainUtils class
+[ 2024-08-30 09:55:52,125 ] 104 root - INFO - Extracting model config file path
