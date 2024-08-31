@@ -1,0 +1,87 @@
+[ 2024-08-31 22:18:15,158 ] 97 werkzeug - WARNING -  * Debugger is active!
+[ 2024-08-31 22:18:15,172 ] 97 werkzeug - INFO -  * Debugger PIN: 119-654-287
+[ 2024-08-31 22:18:16,125 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 22:18:16] "GET /url_classifier HTTP/1.1" 200 -
+[ 2024-08-31 22:18:16,490 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 22:18:16] "GET /url_classifier HTTP/1.1" 200 -
+[ 2024-08-31 22:18:37,472 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 22:18:37] "GET / HTTP/1.1" 200 -
+[ 2024-08-31 22:18:38,921 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 22:18:38] "GET /url_classifier HTTP/1.1" 200 -
+[ 2024-08-31 22:18:42,429 ] 41 root - INFO - Entered initiate_data_ingestion method of Data_Ingestion class
+[ 2024-08-31 22:18:42,430 ] 26 root - INFO - Exporting data from mongodb
+[ 2024-08-31 22:18:42,430 ] 30 root - INFO - Saving exported data into feature store file path: artifacts/08_31_2024_22_18_14/data_ingestion
+[ 2024-08-31 22:18:51,623 ] 32 root - INFO - Shape of dataset: (11055, 31)
+[ 2024-08-31 22:18:51,668 ] 44 root - INFO - Got the data from mongodb
+[ 2024-08-31 22:18:51,668 ] 45 root - INFO - Exited initiate_data_ingestion method of Data_Ingestion class
+[ 2024-08-31 22:18:51,668 ] 123 root - INFO - Entered initiate_data_validation method of Data_Validation class
+[ 2024-08-31 22:18:51,668 ] 125 root - INFO - Initiated data validation for the dataset
+[ 2024-08-31 22:18:51,669 ] 41 root - INFO - Error in valuesFromSchema in data_validation.py
+[ 2024-08-31 22:18:51,830 ] 48 root - INFO - Entered initiate_data_transformation method of DataTransformation class
+[ 2024-08-31 22:18:51,848 ] 83 root - INFO - Unwanted spaces removal Successful.
+Exited the remove_unwanted_spaces method of the Preprocessor class
+[ 2024-08-31 22:18:51,881 ] 38 root - INFO - Entered the save_object method of MainUtils class
+[ 2024-08-31 22:18:51,892 ] 45 root - INFO - Exited the save_object method of MainUtils class
+[ 2024-08-31 22:18:51,893 ] 104 root - INFO - Splitting training and testing input and target feature
+[ 2024-08-31 22:18:51,893 ] 105 root - INFO - Extracting model config file path
+[ 2024-08-31 22:18:51,893 ] 52 root - INFO - Entered the load_object method of MainUtils class
+[ 2024-08-31 22:18:51,893 ] 56 root - INFO - Exited the load_object method of MainUtils class
+[ 2024-08-31 22:18:51,893 ] 107 root - INFO - Extracting model config file path
+[ 2024-08-31 22:19:10,870 ] 119 root - INFO - Best found model on both training and testing dataset
+[ 2024-08-31 22:19:10,870 ] 121 root - INFO - Saving model at path: artifacts/08_31_2024_22_18_14/model_trainer/trained_model/model.pkl
+[ 2024-08-31 22:19:10,871 ] 38 root - INFO - Entered the save_object method of MainUtils class
+[ 2024-08-31 22:19:10,878 ] 45 root - INFO - Exited the save_object method of MainUtils class
+[ 2024-08-31 22:19:10,886 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 22:19:10] "GET /train HTTP/1.1" 200 -
+[ 2024-08-31 22:19:22,571 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 22:19:22] "GET /predict HTTP/1.1" 200 -
+[ 2024-08-31 22:19:22,628 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 22:19:22] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+[ 2024-08-31 22:19:22,666 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 22:19:22] "[33mGET /script.js HTTP/1.1[0m" 404 -
+[ 2024-08-31 22:19:30,694 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 22:19:30] "GET /url_classifier HTTP/1.1" 200 -
+[ 2024-08-31 22:19:35,598 ] 34 root - INFO - Entered predict method of VisibilityModel class
+[ 2024-08-31 22:19:35,599 ] 36 root - INFO - Using the trained model to get predictions
+[ 2024-08-31 22:19:35,603 ] 38 root - INFO - Used the trained model to get predictions
+[ 2024-08-31 22:19:35,657 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 22:19:35] "POST /url_classifier HTTP/1.1" 200 -
+[ 2024-08-31 22:20:04,365 ] 34 root - INFO - Entered predict method of VisibilityModel class
+[ 2024-08-31 22:20:04,365 ] 36 root - INFO - Using the trained model to get predictions
+[ 2024-08-31 22:20:04,368 ] 38 root - INFO - Used the trained model to get predictions
+[ 2024-08-31 22:20:04,395 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 22:20:04] "POST /url_classifier HTTP/1.1" 200 -
+[ 2024-08-31 22:20:19,361 ] 34 root - INFO - Entered predict method of VisibilityModel class
+[ 2024-08-31 22:20:19,361 ] 36 root - INFO - Using the trained model to get predictions
+[ 2024-08-31 22:20:19,364 ] 38 root - INFO - Used the trained model to get predictions
+[ 2024-08-31 22:20:19,383 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 22:20:19] "POST /url_classifier HTTP/1.1" 200 -
+[ 2024-08-31 22:20:32,965 ] 34 root - INFO - Entered predict method of VisibilityModel class
+[ 2024-08-31 22:20:32,966 ] 36 root - INFO - Using the trained model to get predictions
+[ 2024-08-31 22:20:32,968 ] 38 root - INFO - Used the trained model to get predictions
+[ 2024-08-31 22:20:32,990 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 22:20:32] "POST /url_classifier HTTP/1.1" 200 -
+[ 2024-08-31 22:20:47,235 ] 34 root - INFO - Entered predict method of VisibilityModel class
+[ 2024-08-31 22:20:47,235 ] 36 root - INFO - Using the trained model to get predictions
+[ 2024-08-31 22:20:47,237 ] 38 root - INFO - Used the trained model to get predictions
+[ 2024-08-31 22:20:47,257 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 22:20:47] "POST /url_classifier HTTP/1.1" 200 -
+[ 2024-08-31 22:21:01,054 ] 34 root - INFO - Entered predict method of VisibilityModel class
+[ 2024-08-31 22:21:01,055 ] 36 root - INFO - Using the trained model to get predictions
+[ 2024-08-31 22:21:01,058 ] 38 root - INFO - Used the trained model to get predictions
+[ 2024-08-31 22:21:01,078 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 22:21:01] "POST /url_classifier HTTP/1.1" 200 -
+[ 2024-08-31 22:21:13,408 ] 34 root - INFO - Entered predict method of VisibilityModel class
+[ 2024-08-31 22:21:13,408 ] 36 root - INFO - Using the trained model to get predictions
+[ 2024-08-31 22:21:13,410 ] 38 root - INFO - Used the trained model to get predictions
+[ 2024-08-31 22:21:13,434 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 22:21:13] "POST /url_classifier HTTP/1.1" 200 -
+[ 2024-08-31 22:21:56,019 ] 34 root - INFO - Entered predict method of VisibilityModel class
+[ 2024-08-31 22:21:56,019 ] 36 root - INFO - Using the trained model to get predictions
+[ 2024-08-31 22:21:56,021 ] 38 root - INFO - Used the trained model to get predictions
+[ 2024-08-31 22:21:56,043 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 22:21:56] "POST /url_classifier HTTP/1.1" 200 -
+[ 2024-08-31 22:22:03,207 ] 34 root - INFO - Entered predict method of VisibilityModel class
+[ 2024-08-31 22:22:03,208 ] 36 root - INFO - Using the trained model to get predictions
+[ 2024-08-31 22:22:03,211 ] 38 root - INFO - Used the trained model to get predictions
+[ 2024-08-31 22:22:03,233 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 22:22:03] "POST /url_classifier HTTP/1.1" 200 -
+[ 2024-08-31 22:22:11,006 ] 34 root - INFO - Entered predict method of VisibilityModel class
+[ 2024-08-31 22:22:11,007 ] 36 root - INFO - Using the trained model to get predictions
+[ 2024-08-31 22:22:11,009 ] 38 root - INFO - Used the trained model to get predictions
+[ 2024-08-31 22:22:11,052 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 22:22:11] "POST /url_classifier HTTP/1.1" 200 -
+[ 2024-08-31 22:22:26,880 ] 34 root - INFO - Entered predict method of VisibilityModel class
+[ 2024-08-31 22:22:26,880 ] 36 root - INFO - Using the trained model to get predictions
+[ 2024-08-31 22:22:26,882 ] 38 root - INFO - Used the trained model to get predictions
+[ 2024-08-31 22:22:26,902 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 22:22:26] "POST /url_classifier HTTP/1.1" 200 -
+[ 2024-08-31 22:22:45,448 ] 34 root - INFO - Entered predict method of VisibilityModel class
+[ 2024-08-31 22:22:45,450 ] 36 root - INFO - Using the trained model to get predictions
+[ 2024-08-31 22:22:45,452 ] 38 root - INFO - Used the trained model to get predictions
+[ 2024-08-31 22:22:45,471 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 22:22:45] "POST /url_classifier HTTP/1.1" 200 -
+[ 2024-08-31 22:23:16,354 ] 34 root - INFO - Entered predict method of VisibilityModel class
+[ 2024-08-31 22:23:16,355 ] 36 root - INFO - Using the trained model to get predictions
+[ 2024-08-31 22:23:16,357 ] 38 root - INFO - Used the trained model to get predictions
+[ 2024-08-31 22:23:16,378 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 22:23:16] "POST /url_classifier HTTP/1.1" 200 -
+[ 2024-08-31 22:24:55,276 ] 97 werkzeug - INFO -  * Detected change in '/Users/adityachaudhary/Desktop/Important Projects/Data Science/Phishing-Classifier/app.py', reloading

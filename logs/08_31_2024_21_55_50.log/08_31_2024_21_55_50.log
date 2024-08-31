@@ -1,0 +1,13 @@
+[ 2024-08-31 21:55:51,646 ] 97 werkzeug - WARNING -  * Debugger is active!
+[ 2024-08-31 21:55:51,661 ] 97 werkzeug - INFO -  * Debugger PIN: 119-654-287
+[ 2024-08-31 21:55:55,276 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 21:55:55] "[31m[1mGET /url_classifier HTTP/1.1[0m" 415 -
+[ 2024-08-31 21:55:56,041 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 21:55:56] "[31m[1mGET /url_classifier HTTP/1.1[0m" 415 -
+[ 2024-08-31 21:55:56,530 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 21:55:56] "[31m[1mGET /url_classifier HTTP/1.1[0m" 415 -
+[ 2024-08-31 21:55:56,824 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 21:55:56] "[31m[1mGET /url_classifier HTTP/1.1[0m" 415 -
+[ 2024-08-31 21:56:08,725 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 21:56:08] "GET / HTTP/1.1" 200 -
+[ 2024-08-31 21:56:09,918 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 21:56:09] "[31m[1mGET /url_classifier HTTP/1.1[0m" 415 -
+[ 2024-08-31 21:59:54,954 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 21:59:54] "[31m[1mGET /url_classifier HTTP/1.1[0m" 415 -
+[ 2024-08-31 21:59:55,485 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 21:59:55] "[31m[1mGET /url_classifier HTTP/1.1[0m" 415 -
+[ 2024-08-31 21:59:55,695 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 21:59:55] "[31m[1mGET /url_classifier HTTP/1.1[0m" 415 -
+[ 2024-08-31 21:59:55,918 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 21:59:55] "[31m[1mGET /url_classifier HTTP/1.1[0m" 415 -
+[ 2024-08-31 21:59:56,404 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 21:59:56] "[31m[1mGET /url_classifier HTTP/1.1[0m" 415 -

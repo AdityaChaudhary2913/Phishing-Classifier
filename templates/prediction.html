@@ -10,31 +10,41 @@
 	</head>
 	<body>
 		<form action="/predict" method="post" enctype="multipart/form-data">
-			<h1 class="title">Upload CSV for the prediction</h1>
+			<h1 class="title">Upload CSV for the classification</h1>
 			<div class="frame">
 				<div class="center">
 					<div class="title">
 						<h1>Drop file to upload</h1>
 					</div>
-
+					
 					<div class="dropzone">
 						<img
-							src="http://100dayscss.com/codepen/upload.svg"
-							class="upload-icon" />
+						src="http://100dayscss.com/codepen/upload.svg"
+						class="upload-icon" />
 						<input type="file" class="upload-input" name="file" accept=".csv" />
 					</div>
-
+					
 					<button type="submit" class="btn" name="uploadbutton">
 						Upload file
 					</button>
 				</div>
 			</div>
 		</form>
-		<!-- original pen: https://codepen.io/roydigerhund/pen/ZQdbeN  -->
-
-		<!-- NO JS ADDED YET -->
-		<!-- partial -->
 		<script src="https://100dayscss.com/codepen/js/jquery.min.js"></script>
 		<script src="./script.js"></script>
+		<script>
+			async function classifyURL() {
+				const url = document.getElementById('urlInput').value;
+				const response = await fetch('/classify-url', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify({ url: url })
+				});
+				const data = await response.json();
+				document.getElementById('result').innerText = `The URL is ${data.result}`;
+			}
+		</script>
 	</body>
 </html>

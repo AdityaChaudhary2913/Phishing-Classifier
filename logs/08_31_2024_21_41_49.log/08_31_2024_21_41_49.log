@@ -1,0 +1,25 @@
+[ 2024-08-31 21:41:51,167 ] 97 werkzeug - WARNING -  * Debugger is active!
+[ 2024-08-31 21:41:51,180 ] 97 werkzeug - INFO -  * Debugger PIN: 119-654-287
+[ 2024-08-31 21:41:54,919 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 21:41:54] "GET / HTTP/1.1" 200 -
+[ 2024-08-31 21:41:56,905 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 21:41:56] "GET /predict HTTP/1.1" 200 -
+[ 2024-08-31 21:41:56,940 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 21:41:56] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+[ 2024-08-31 21:41:56,988 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 21:41:56] "[33mGET /script.js HTTP/1.1[0m" 404 -
+[ 2024-08-31 21:41:59,506 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 21:41:59] "GET /url_classifier HTTP/1.1" 200 -
+[ 2024-08-31 21:42:06,388 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 21:42:06] "POST /url_classifier HTTP/1.1" 200 -
+[ 2024-08-31 21:42:08,574 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 21:42:08] "POST /url_classifier HTTP/1.1" 200 -
+[ 2024-08-31 21:42:09,024 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 21:42:09] "POST /url_classifier HTTP/1.1" 200 -
+[ 2024-08-31 21:42:09,863 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 21:42:09] "POST /url_classifier HTTP/1.1" 200 -
+[ 2024-08-31 21:42:31,991 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 21:42:31] "POST /url_classifier HTTP/1.1" 200 -
+[ 2024-08-31 21:42:48,699 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 21:42:48] "POST /url_classifier HTTP/1.1" 200 -
+[ 2024-08-31 21:42:49,031 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 21:42:49] "POST /url_classifier HTTP/1.1" 200 -
+[ 2024-08-31 21:42:50,564 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 21:42:50] "GET /url_classifier HTTP/1.1" 200 -
+[ 2024-08-31 21:42:51,619 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 21:42:51] "GET /url_classifier HTTP/1.1" 200 -
+[ 2024-08-31 21:42:52,207 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 21:42:52] "GET /url_classifier HTTP/1.1" 200 -
+[ 2024-08-31 21:42:52,454 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 21:42:52] "GET /url_classifier HTTP/1.1" 200 -
+[ 2024-08-31 21:42:52,683 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 21:42:52] "GET /url_classifier HTTP/1.1" 200 -
+[ 2024-08-31 21:42:52,920 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 21:42:52] "GET /url_classifier HTTP/1.1" 200 -
+[ 2024-08-31 21:43:05,592 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 21:43:05] "POST /url_classifier HTTP/1.1" 200 -
+[ 2024-08-31 21:43:06,457 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 21:43:06] "POST /url_classifier HTTP/1.1" 200 -
+[ 2024-08-31 21:43:16,448 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 21:43:16] "POST /url_classifier HTTP/1.1" 200 -
+[ 2024-08-31 21:43:17,002 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 21:43:17] "POST /url_classifier HTTP/1.1" 200 -
+[ 2024-08-31 21:45:47,227 ] 97 werkzeug - INFO -  * Detected change in '/Users/adityachaudhary/Desktop/Important Projects/Data Science/Phishing-Classifier/app.py', reloading

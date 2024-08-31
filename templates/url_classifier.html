@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing URL Classifier</title>
+    <style>
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 40px;
+        }
+        input[type="text"] {
+            padding: 15px;
+            font-size: 18px;
+            width: 100%;
+            max-width: 400px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            color: #fff;
+            background-color: #007BFF;
+            border-radius: 5px;
+            border: none;
+            margin: 10px;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        #result {
+            font-size: 20px;
+            color: #000000;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Phishing URL Classifier</h1>
+        <input type="text" id="urlInput" placeholder="Enter URL" />
+        <button class="button" onclick="classifyURL()">Classify</button>
+        <p id="result">{{result}}</p>
+    </div>
+
+    <script>
+        async function classifyURL() {
+            const url = document.getElementById('urlInput').value;
+            const response = await fetch('/url_classifier', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ url: url })
+            });
+            const data = await response.json();
+            document.getElementById('result').innerText = `The URL: ${url} is ${data.result}`;
+        }
+    </script>
+</body>
+</html>
