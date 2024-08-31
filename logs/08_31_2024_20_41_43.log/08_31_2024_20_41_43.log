@@ -1,0 +1,43 @@
+[ 2024-08-31 20:41:45,377 ] 97 werkzeug - WARNING -  * Debugger is active!
+[ 2024-08-31 20:41:45,386 ] 97 werkzeug - INFO -  * Debugger PIN: 119-654-287
+[ 2024-08-31 20:41:50,937 ] 41 root - INFO - Entered initiate_data_ingestion method of Data_Ingestion class
+[ 2024-08-31 20:41:50,937 ] 26 root - INFO - Exporting data from mongodb
+[ 2024-08-31 20:41:50,938 ] 30 root - INFO - Saving exported data into feature store file path: artifacts/08_31_2024_20_41_44/data_ingestion
+[ 2024-08-31 20:41:58,181 ] 32 root - INFO - Shape of dataset: (11055, 31)
+[ 2024-08-31 20:41:58,237 ] 44 root - INFO - Got the data from mongodb
+[ 2024-08-31 20:41:58,237 ] 45 root - INFO - Exited initiate_data_ingestion method of Data_Ingestion class
+[ 2024-08-31 20:41:58,237 ] 123 root - INFO - Entered initiate_data_validation method of Data_Validation class
+[ 2024-08-31 20:41:58,237 ] 125 root - INFO - Initiated data validation for the dataset
+[ 2024-08-31 20:41:58,237 ] 41 root - INFO - Error in valuesFromSchema in data_validation.py
+[ 2024-08-31 20:41:58,280 ] 48 root - INFO - Entered initiate_data_transformation method of DataTransformation class
+[ 2024-08-31 20:41:58,301 ] 83 root - INFO - Unwanted spaces removal Successful.
+Exited the remove_unwanted_spaces method of the Preprocessor class
+[ 2024-08-31 20:41:58,331 ] 38 root - INFO - Entered the save_object method of MainUtils class
+[ 2024-08-31 20:41:58,332 ] 45 root - INFO - Exited the save_object method of MainUtils class
+[ 2024-08-31 20:41:58,333 ] 104 root - INFO - Splitting training and testing input and target feature
+[ 2024-08-31 20:41:58,333 ] 105 root - INFO - Extracting model config file path
+[ 2024-08-31 20:41:58,333 ] 52 root - INFO - Entered the load_object method of MainUtils class
+[ 2024-08-31 20:41:58,333 ] 56 root - INFO - Exited the load_object method of MainUtils class
+[ 2024-08-31 20:41:58,333 ] 107 root - INFO - Extracting model config file path
+[ 2024-08-31 20:42:47,266 ] 97 werkzeug - INFO -  * Detected change in '/Users/adityachaudhary/Desktop/Important Projects/Data Science/Phishing-Classifier/src/components/model_trainer.py', reloading
+[ 2024-08-31 20:42:47,381 ] 28 concurrent.futures - ERROR - exception calling callback for <Future at 0x16b731520 state=finished returned list>
+Traceback (most recent call last):
+  File "/Users/adityachaudhary/Desktop/Important Projects/Data Science/Phishing-Classifier/env/lib/python3.8/site-packages/joblib/externals/loky/_base.py", line 26, in _invoke_callbacks
+    callback(self)
+  File "/Users/adityachaudhary/Desktop/Important Projects/Data Science/Phishing-Classifier/env/lib/python3.8/site-packages/joblib/parallel.py", line 828, in __call__
+    self._dispatch_new()
+  File "/Users/adityachaudhary/Desktop/Important Projects/Data Science/Phishing-Classifier/env/lib/python3.8/site-packages/joblib/parallel.py", line 843, in _dispatch_new
+    self.parallel.dispatch_next()
+  File "/Users/adityachaudhary/Desktop/Important Projects/Data Science/Phishing-Classifier/env/lib/python3.8/site-packages/joblib/parallel.py", line 1429, in dispatch_next
+    if not self.dispatch_one_batch(self._original_iterator):
+  File "/Users/adityachaudhary/Desktop/Important Projects/Data Science/Phishing-Classifier/env/lib/python3.8/site-packages/joblib/parallel.py", line 1517, in dispatch_one_batch
+    self._dispatch(tasks)
+  File "/Users/adityachaudhary/Desktop/Important Projects/Data Science/Phishing-Classifier/env/lib/python3.8/site-packages/joblib/parallel.py", line 1418, in _dispatch
+    job = self._backend.apply_async(batch, callback=batch_tracker)
+  File "/Users/adityachaudhary/Desktop/Important Projects/Data Science/Phishing-Classifier/env/lib/python3.8/site-packages/joblib/_parallel_backends.py", line 588, in apply_async
+    future = self._workers.submit(func)
+  File "/Users/adityachaudhary/Desktop/Important Projects/Data Science/Phishing-Classifier/env/lib/python3.8/site-packages/joblib/externals/loky/reusable_executor.py", line 225, in submit
+    return super().submit(fn, *args, **kwargs)
+  File "/Users/adityachaudhary/Desktop/Important Projects/Data Science/Phishing-Classifier/env/lib/python3.8/site-packages/joblib/externals/loky/process_executor.py", line 1228, in submit
+    raise ShutdownExecutorError(
+joblib.externals.loky.process_executor.ShutdownExecutorError: cannot schedule new futures after shutdown

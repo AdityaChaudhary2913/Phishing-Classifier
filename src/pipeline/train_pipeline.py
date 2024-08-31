@@ -48,6 +48,6 @@ class TrainingPipeline:
             valid_data_dir = self.start_data_validation(raw_data_dir)
             x_train, y_train, x_test, y_test, preprocessor_path = self.start_data_transformation(valid_data_dir)
             r2_square = self.start_model_training(x_train, y_train, x_test, y_test, preprocessor_path)
-            print(f"Training completed. \nTrained model Accuracy: {round(r2_square*100, 2)}%")
+            print(f"Training completed. \nTrained model Accuracy: {round(r2_square, 2)}%")
         except Exception as e:
             raise CustomException(e, sys)

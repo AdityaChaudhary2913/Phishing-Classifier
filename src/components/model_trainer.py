@@ -67,7 +67,9 @@ class ModelTrainer:
                 y_train_pred = model.predict(X_train)
                 y_test_pred = model.predict(X_test)
                 # train_model_score = accuracy_score(y_train, y_train_pred)
-                test_model_score = accuracy_score(y_test, y_test_pred)
+                test_model_score = accuracy_score(y_test, y_test_pred)*100
+                model_name = list(models.keys())[i]
+                print(f"Accuracy of {model_name}: {test_model_score:.2f}%")
                 report[list(models.keys())[i]] = test_model_score
             return report
         except Exception as e:
@@ -77,9 +79,10 @@ class ModelTrainer:
         try:
             model_report: dict = self.evaluate_models(x_train, x_test, y_train, y_test, self.models)
             print(model_report)
-            best_model_score = max(sorted(model_report.values()))
+            best_model_score = max(sorted(model_report.values())) * 100
             best_model_name = list(model_report.keys())[list(model_report.values()).index(best_model_score)]
             best_model_object = self.models[best_model_name]
+            print(f"\nBest Model: {best_model_name} with Accuracy: {best_model_score:.2f}%")
             return best_model_name, best_model_object, best_model_score
         except Exception as e:
             raise CustomException(e, sys)
@@ -109,8 +112,8 @@ class ModelTrainer:
             best_model = self.finetune_best_model(best_model_name=best_model_name, best_model_object=best_model, X_train=x_train, y_train=y_train)
             best_model.fit(x_train, y_train)
             y_pred = best_model.predict(x_test)
-            best_model_score = accuracy_score(y_test, y_pred)
-            print(f"best model name {best_model_name} and score: {best_model_score}")
+            best_model_score = accuracy_score(y_test, y_pred) * 100
+            print(f"\nFinal Best Model: {best_model_name} with Accuracy after fine-tuning: {best_model_score:.2f}%")
             if best_model_score < 0.5:
                 raise Exception("No best model found with an accuracy greater than the threshold 0.6")
             logging.info(f"Best found model on both training and testing dataset")
