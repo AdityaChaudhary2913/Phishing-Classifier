@@ -40,13 +40,13 @@
             text-align: center;
             text-decoration: none;
             color: #fff;
-            background-color: #28a745;
+            background-color: #007BFF;
             border-radius: 5px;
             border: none;
             transition: background-color 0.3s ease;
         }
         .button:hover {
-            background-color: #218838;
+            background-color: #0056b3;
         }
     </style>
 </head>
@@ -54,7 +54,8 @@
     <div class="container">
         <h1>Model Trained Successfully</h1>
         <p>Your model has been trained successfully. You can now proceed to make predictions.</p>
-        <a href="{{ url_for('predict') }}" class="button">Go to Classify</a>
+        <a href="{{ url_for('predict') }}" class="button">Classify CSV file</a>
+        <a href="{{ url_for('url_classifier') }}" class="button">Classify URL</a>
     </div>
 </body>
 </html>

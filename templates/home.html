@@ -54,7 +54,13 @@
 <body>
     <div class="container">
         <h1>Welcome to Phishing Classifier</h1>
-        <a href="{{ url_for('train_route') }}" id="status" class="button" onclick="displayTrainingMessage()">Train the Model</a>
+        <a href="{{ url_for('train_route') }}" id="status" class="button" onclick="displayTrainingMessage()">
+            {% if name %}
+                Model is Trained
+            {% else %}
+                Train the Model
+            {% endif %}
+        </a>
         <a href="{{ url_for('predict') }}" class="button">Classify CSV file</a>
         <a href="{{ url_for('url_classifier') }}" class="button">Classify URL</a>
     </div>

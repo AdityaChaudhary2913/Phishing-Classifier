@@ -1,0 +1,37 @@
+[ 2024-09-01 14:52:46,653 ] 97 werkzeug - WARNING -  * Debugger is active!
+[ 2024-09-01 14:52:46,663 ] 97 werkzeug - INFO -  * Debugger PIN: 119-654-287
+[ 2024-09-01 14:52:49,215 ] 97 werkzeug - INFO - 127.0.0.1 - - [01/Sep/2024 14:52:49] "GET / HTTP/1.1" 200 -
+[ 2024-09-01 14:53:01,794 ] 97 werkzeug - INFO - 127.0.0.1 - - [01/Sep/2024 14:53:01] "GET / HTTP/1.1" 200 -
+[ 2024-09-01 14:53:02,365 ] 97 werkzeug - INFO - 127.0.0.1 - - [01/Sep/2024 14:53:02] "GET / HTTP/1.1" 200 -
+[ 2024-09-01 14:53:04,230 ] 97 werkzeug - INFO - 127.0.0.1 - - [01/Sep/2024 14:53:04] "GET /url_classifier HTTP/1.1" 200 -
+[ 2024-09-01 14:53:05,493 ] 97 werkzeug - INFO - 127.0.0.1 - - [01/Sep/2024 14:53:05] "[35m[1mPOST /url_classifier HTTP/1.1[0m" 500 -
+[ 2024-09-01 14:53:14,124 ] 97 werkzeug - INFO - 127.0.0.1 - - [01/Sep/2024 14:53:14] "GET /predict HTTP/1.1" 200 -
+[ 2024-09-01 14:53:14,161 ] 97 werkzeug - INFO - 127.0.0.1 - - [01/Sep/2024 14:53:14] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+[ 2024-09-01 14:53:14,182 ] 97 werkzeug - INFO - 127.0.0.1 - - [01/Sep/2024 14:53:14] "[33mGET /script.js HTTP/1.1[0m" 404 -
+[ 2024-09-01 14:53:18,338 ] 41 root - INFO - Entered initiate_data_ingestion method of Data_Ingestion class
+[ 2024-09-01 14:53:18,339 ] 26 root - INFO - Exporting data from mongodb
+[ 2024-09-01 14:53:18,340 ] 30 root - INFO - Saving exported data into feature store file path: artifacts/09_01_2024_14_52_45/data_ingestion
+[ 2024-09-01 14:53:22,338 ] 32 root - INFO - Shape of dataset: (11055, 31)
+[ 2024-09-01 14:53:22,381 ] 44 root - INFO - Got the data from mongodb
+[ 2024-09-01 14:53:22,381 ] 45 root - INFO - Exited initiate_data_ingestion method of Data_Ingestion class
+[ 2024-09-01 14:53:22,381 ] 123 root - INFO - Entered initiate_data_validation method of Data_Validation class
+[ 2024-09-01 14:53:22,381 ] 125 root - INFO - Initiated data validation for the dataset
+[ 2024-09-01 14:53:22,382 ] 41 root - INFO - Error in valuesFromSchema in data_validation.py
+[ 2024-09-01 14:53:22,413 ] 48 root - INFO - Entered initiate_data_transformation method of DataTransformation class
+[ 2024-09-01 14:53:22,431 ] 83 root - INFO - Unwanted spaces removal Successful.
+Exited the remove_unwanted_spaces method of the Preprocessor class
+[ 2024-09-01 14:53:22,453 ] 38 root - INFO - Entered the save_object method of MainUtils class
+[ 2024-09-01 14:53:22,454 ] 45 root - INFO - Exited the save_object method of MainUtils class
+[ 2024-09-01 14:53:22,455 ] 104 root - INFO - Splitting training and testing input and target feature
+[ 2024-09-01 14:53:22,455 ] 105 root - INFO - Extracting model config file path
+[ 2024-09-01 14:53:22,455 ] 52 root - INFO - Entered the load_object method of MainUtils class
+[ 2024-09-01 14:53:22,455 ] 56 root - INFO - Exited the load_object method of MainUtils class
+[ 2024-09-01 14:53:22,455 ] 107 root - INFO - Extracting model config file path
+[ 2024-09-01 14:53:39,643 ] 119 root - INFO - Best found model on both training and testing dataset
+[ 2024-09-01 14:53:39,644 ] 121 root - INFO - Saving model at path: artifacts/09_01_2024_14_52_45/model_trainer/trained_model/model.pkl
+[ 2024-09-01 14:53:39,645 ] 38 root - INFO - Entered the save_object method of MainUtils class
+[ 2024-09-01 14:53:39,648 ] 45 root - INFO - Exited the save_object method of MainUtils class
+[ 2024-09-01 14:53:39,652 ] 97 werkzeug - INFO - 127.0.0.1 - - [01/Sep/2024 14:53:39] "GET /train HTTP/1.1" 200 -
+[ 2024-09-01 15:11:14,746 ] 97 werkzeug - INFO - 127.0.0.1 - - [01/Sep/2024 15:11:14] "GET /url_classifier HTTP/1.1" 200 -
+[ 2024-09-01 15:11:18,997 ] 97 werkzeug - INFO - 127.0.0.1 - - [01/Sep/2024 15:11:18] "[35m[1mPOST /url_classifier HTTP/1.1[0m" 500 -
+[ 2024-09-01 15:12:37,825 ] 97 werkzeug - INFO -  * Detected change in '/Users/adityachaudhary/Desktop/Important Projects/Data Science/Phishing-Classifier/app.py', reloading

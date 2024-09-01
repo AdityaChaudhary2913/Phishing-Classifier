@@ -1,0 +1,23 @@
+[ 2024-09-01 14:16:35,411 ] 97 werkzeug - WARNING -  * Debugger is active!
+[ 2024-09-01 14:16:35,422 ] 97 werkzeug - INFO -  * Debugger PIN: 119-654-287
+[ 2024-09-01 14:16:35,458 ] 97 werkzeug - INFO - 127.0.0.1 - - [01/Sep/2024 14:16:35] "GET / HTTP/1.1" 200 -
+[ 2024-09-01 14:16:35,638 ] 97 werkzeug - INFO - 127.0.0.1 - - [01/Sep/2024 14:16:35] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+[ 2024-09-01 14:16:52,659 ] 41 root - INFO - Entered initiate_data_ingestion method of Data_Ingestion class
+[ 2024-09-01 14:16:52,660 ] 26 root - INFO - Exporting data from mongodb
+[ 2024-09-01 14:16:52,661 ] 30 root - INFO - Saving exported data into feature store file path: artifacts/09_01_2024_14_16_34/data_ingestion
+[ 2024-09-01 14:16:56,181 ] 32 root - INFO - Shape of dataset: (11055, 31)
+[ 2024-09-01 14:16:56,230 ] 44 root - INFO - Got the data from mongodb
+[ 2024-09-01 14:16:56,230 ] 45 root - INFO - Exited initiate_data_ingestion method of Data_Ingestion class
+[ 2024-09-01 14:16:56,230 ] 123 root - INFO - Entered initiate_data_validation method of Data_Validation class
+[ 2024-09-01 14:16:56,230 ] 125 root - INFO - Initiated data validation for the dataset
+[ 2024-09-01 14:16:56,231 ] 41 root - INFO - Error in valuesFromSchema in data_validation.py
+[ 2024-09-01 14:16:56,268 ] 48 root - INFO - Entered initiate_data_transformation method of DataTransformation class
+[ 2024-09-01 14:16:56,287 ] 83 root - INFO - Unwanted spaces removal Successful.
+Exited the remove_unwanted_spaces method of the Preprocessor class
+[ 2024-09-01 14:16:56,313 ] 38 root - INFO - Entered the save_object method of MainUtils class
+[ 2024-09-01 14:16:56,315 ] 45 root - INFO - Exited the save_object method of MainUtils class
+[ 2024-09-01 14:16:56,316 ] 104 root - INFO - Splitting training and testing input and target feature
+[ 2024-09-01 14:16:56,316 ] 105 root - INFO - Extracting model config file path
+[ 2024-09-01 14:16:56,316 ] 52 root - INFO - Entered the load_object method of MainUtils class
+[ 2024-09-01 14:16:56,316 ] 56 root - INFO - Exited the load_object method of MainUtils class
+[ 2024-09-01 14:16:56,316 ] 107 root - INFO - Extracting model config file path

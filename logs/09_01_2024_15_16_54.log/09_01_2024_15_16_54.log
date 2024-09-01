@@ -1,0 +1,37 @@
+[ 2024-09-01 15:16:55,362 ] 97 werkzeug - WARNING -  * Debugger is active!
+[ 2024-09-01 15:16:55,371 ] 97 werkzeug - INFO -  * Debugger PIN: 119-654-287
+[ 2024-09-01 15:16:56,314 ] 97 werkzeug - INFO - 127.0.0.1 - - [01/Sep/2024 15:16:56] "GET /url_classifier HTTP/1.1" 200 -
+[ 2024-09-01 15:16:56,830 ] 97 werkzeug - INFO - 127.0.0.1 - - [01/Sep/2024 15:16:56] "GET /url_classifier HTTP/1.1" 200 -
+[ 2024-09-01 15:17:08,756 ] 34 root - INFO - Entered predict method of VisibilityModel class
+[ 2024-09-01 15:17:08,758 ] 36 root - INFO - Using the trained model to get predictions
+[ 2024-09-01 15:17:08,761 ] 38 root - INFO - Used the trained model to get predictions
+[ 2024-09-01 15:17:08,764 ] 97 werkzeug - INFO - 127.0.0.1 - - [01/Sep/2024 15:17:08] "POST /url_classifier HTTP/1.1" 200 -
+[ 2024-09-01 15:17:39,496 ] 34 root - INFO - Entered predict method of VisibilityModel class
+[ 2024-09-01 15:17:39,497 ] 36 root - INFO - Using the trained model to get predictions
+[ 2024-09-01 15:17:39,498 ] 38 root - INFO - Used the trained model to get predictions
+[ 2024-09-01 15:17:39,499 ] 97 werkzeug - INFO - 127.0.0.1 - - [01/Sep/2024 15:17:39] "POST /url_classifier HTTP/1.1" 200 -
+[ 2024-09-01 15:17:49,709 ] 34 root - INFO - Entered predict method of VisibilityModel class
+[ 2024-09-01 15:17:49,710 ] 36 root - INFO - Using the trained model to get predictions
+[ 2024-09-01 15:17:49,711 ] 38 root - INFO - Used the trained model to get predictions
+[ 2024-09-01 15:17:49,714 ] 97 werkzeug - INFO - 127.0.0.1 - - [01/Sep/2024 15:17:49] "POST /url_classifier HTTP/1.1" 200 -
+[ 2024-09-01 15:20:23,573 ] 34 root - INFO - Entered predict method of VisibilityModel class
+[ 2024-09-01 15:20:23,573 ] 36 root - INFO - Using the trained model to get predictions
+[ 2024-09-01 15:20:23,583 ] 38 root - INFO - Used the trained model to get predictions
+[ 2024-09-01 15:20:23,598 ] 97 werkzeug - INFO - 127.0.0.1 - - [01/Sep/2024 15:20:23] "POST /url_classifier HTTP/1.1" 200 -
+[ 2024-09-01 15:21:20,766 ] 34 root - INFO - Entered predict method of VisibilityModel class
+[ 2024-09-01 15:21:20,767 ] 36 root - INFO - Using the trained model to get predictions
+[ 2024-09-01 15:21:20,769 ] 38 root - INFO - Used the trained model to get predictions
+[ 2024-09-01 15:21:20,772 ] 97 werkzeug - INFO - 127.0.0.1 - - [01/Sep/2024 15:21:20] "POST /url_classifier HTTP/1.1" 200 -
+[ 2024-09-01 15:21:34,153 ] 34 root - INFO - Entered predict method of VisibilityModel class
+[ 2024-09-01 15:21:34,154 ] 36 root - INFO - Using the trained model to get predictions
+[ 2024-09-01 15:21:34,155 ] 38 root - INFO - Used the trained model to get predictions
+[ 2024-09-01 15:21:34,156 ] 97 werkzeug - INFO - 127.0.0.1 - - [01/Sep/2024 15:21:34] "POST /url_classifier HTTP/1.1" 200 -
+[ 2024-09-01 15:22:36,686 ] 34 root - INFO - Entered predict method of VisibilityModel class
+[ 2024-09-01 15:22:36,687 ] 36 root - INFO - Using the trained model to get predictions
+[ 2024-09-01 15:22:36,690 ] 38 root - INFO - Used the trained model to get predictions
+[ 2024-09-01 15:22:36,693 ] 97 werkzeug - INFO - 127.0.0.1 - - [01/Sep/2024 15:22:36] "POST /url_classifier HTTP/1.1" 200 -
+[ 2024-09-01 15:22:41,957 ] 34 root - INFO - Entered predict method of VisibilityModel class
+[ 2024-09-01 15:22:41,957 ] 36 root - INFO - Using the trained model to get predictions
+[ 2024-09-01 15:22:41,958 ] 38 root - INFO - Used the trained model to get predictions
+[ 2024-09-01 15:22:41,959 ] 97 werkzeug - INFO - 127.0.0.1 - - [01/Sep/2024 15:22:41] "POST /url_classifier HTTP/1.1" 200 -
+[ 2024-09-01 15:33:16,386 ] 97 werkzeug - INFO -  * Detected change in '/Users/adityachaudhary/Desktop/Important Projects/Data Science/Phishing-Classifier/app.py', reloading
