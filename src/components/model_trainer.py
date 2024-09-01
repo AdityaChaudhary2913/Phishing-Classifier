@@ -10,7 +10,7 @@ from sklearn.metrics import accuracy_score
 from sklearn.naive_bayes import GaussianNB
 from sklearn.compose import ColumnTransformer
 from xgboost import XGBClassifier
-from sklearn.model_selection import GridSearchCV, train_test_split
+from sklearn.model_selection import GridSearchCV
 from src.constant import *
 from src.exception import CustomException
 from src.logger import logging

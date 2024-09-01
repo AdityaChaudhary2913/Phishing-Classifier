@@ -1,0 +1,26 @@
+[ 2024-09-01 19:40:35,899 ] 97 werkzeug - WARNING -  * Debugger is active!
+[ 2024-09-01 19:40:35,909 ] 97 werkzeug - INFO -  * Debugger PIN: 119-654-287
+[ 2024-09-01 19:40:38,821 ] 97 werkzeug - INFO - 127.0.0.1 - - [01/Sep/2024 19:40:38] "GET / HTTP/1.1" 200 -
+[ 2024-09-01 19:40:40,937 ] 97 werkzeug - INFO - 127.0.0.1 - - [01/Sep/2024 19:40:40] "GET / HTTP/1.1" 200 -
+[ 2024-09-01 19:40:41,519 ] 97 werkzeug - INFO - 127.0.0.1 - - [01/Sep/2024 19:40:41] "GET / HTTP/1.1" 200 -
+[ 2024-09-01 19:40:41,833 ] 97 werkzeug - INFO - 127.0.0.1 - - [01/Sep/2024 19:40:41] "GET / HTTP/1.1" 200 -
+[ 2024-09-01 19:40:42,123 ] 97 werkzeug - INFO - 127.0.0.1 - - [01/Sep/2024 19:40:42] "GET / HTTP/1.1" 200 -
+[ 2024-09-01 19:40:46,767 ] 41 root - INFO - Entered initiate_data_ingestion method of Data_Ingestion class
+[ 2024-09-01 19:40:46,767 ] 26 root - INFO - Exporting data from mongodb
+[ 2024-09-01 19:40:46,767 ] 30 root - INFO - Saving exported data into feature store file path: artifacts/09_01_2024_19_40_35/data_ingestion
+[ 2024-09-01 19:40:49,883 ] 32 root - INFO - Shape of dataset: (11055, 31)
+[ 2024-09-01 19:40:49,926 ] 44 root - INFO - Got the data from mongodb
+[ 2024-09-01 19:40:49,926 ] 45 root - INFO - Exited initiate_data_ingestion method of Data_Ingestion class
+[ 2024-09-01 19:40:49,926 ] 123 root - INFO - Entered initiate_data_validation method of Data_Validation class
+[ 2024-09-01 19:40:49,926 ] 125 root - INFO - Initiated data validation for the dataset
+[ 2024-09-01 19:40:49,926 ] 41 root - INFO - Error in valuesFromSchema in data_validation.py
+[ 2024-09-01 19:40:49,959 ] 48 root - INFO - Entered initiate_data_transformation method of DataTransformation class
+[ 2024-09-01 19:40:49,975 ] 83 root - INFO - Unwanted spaces removal Successful.
+Exited the remove_unwanted_spaces method of the Preprocessor class
+[ 2024-09-01 19:40:49,997 ] 38 root - INFO - Entered the save_object method of MainUtils class
+[ 2024-09-01 19:40:49,998 ] 45 root - INFO - Exited the save_object method of MainUtils class
+[ 2024-09-01 19:40:49,999 ] 104 root - INFO - Splitting training and testing input and target feature
+[ 2024-09-01 19:40:49,999 ] 105 root - INFO - Extracting model config file path
+[ 2024-09-01 19:40:49,999 ] 52 root - INFO - Entered the load_object method of MainUtils class
+[ 2024-09-01 19:40:49,999 ] 56 root - INFO - Exited the load_object method of MainUtils class
+[ 2024-09-01 19:40:49,999 ] 107 root - INFO - Extracting model config file path

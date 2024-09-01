@@ -1,0 +1,26 @@
+[ 2024-09-01 20:12:33,914 ] 97 werkzeug - WARNING -  * Debugger is active!
+[ 2024-09-01 20:12:33,937 ] 97 werkzeug - INFO -  * Debugger PIN: 119-654-287
+[ 2024-09-01 20:12:37,565 ] 97 werkzeug - INFO - 127.0.0.1 - - [01/Sep/2024 20:12:37] "GET /url_classifier HTTP/1.1" 200 -
+[ 2024-09-01 20:12:41,291 ] 34 root - INFO - Entered predict method of VisibilityModel class
+[ 2024-09-01 20:12:41,291 ] 36 root - INFO - Using the trained model to get predictions
+[ 2024-09-01 20:12:41,295 ] 38 root - INFO - Used the trained model to get predictions
+[ 2024-09-01 20:12:41,306 ] 97 werkzeug - INFO - 127.0.0.1 - - [01/Sep/2024 20:12:41] "POST /url_classifier HTTP/1.1" 200 -
+[ 2024-09-01 20:13:22,993 ] 97 werkzeug - INFO - 127.0.0.1 - - [01/Sep/2024 20:13:22] "[35m[1mPOST /url_classifier HTTP/1.1[0m" 500 -
+[ 2024-09-01 20:14:13,900 ] 34 root - INFO - Entered predict method of VisibilityModel class
+[ 2024-09-01 20:14:13,901 ] 36 root - INFO - Using the trained model to get predictions
+[ 2024-09-01 20:14:13,902 ] 38 root - INFO - Used the trained model to get predictions
+[ 2024-09-01 20:14:13,915 ] 97 werkzeug - INFO - 127.0.0.1 - - [01/Sep/2024 20:14:13] "POST /url_classifier HTTP/1.1" 200 -
+[ 2024-09-01 20:14:55,766 ] 34 root - INFO - Entered predict method of VisibilityModel class
+[ 2024-09-01 20:14:55,768 ] 36 root - INFO - Using the trained model to get predictions
+[ 2024-09-01 20:14:55,770 ] 38 root - INFO - Used the trained model to get predictions
+[ 2024-09-01 20:14:55,783 ] 97 werkzeug - INFO - 127.0.0.1 - - [01/Sep/2024 20:14:55] "POST /url_classifier HTTP/1.1" 200 -
+[ 2024-09-01 20:15:30,387 ] 34 root - INFO - Entered predict method of VisibilityModel class
+[ 2024-09-01 20:15:30,389 ] 36 root - INFO - Using the trained model to get predictions
+[ 2024-09-01 20:15:30,391 ] 38 root - INFO - Used the trained model to get predictions
+[ 2024-09-01 20:15:30,405 ] 97 werkzeug - INFO - 127.0.0.1 - - [01/Sep/2024 20:15:30] "POST /url_classifier HTTP/1.1" 200 -
+[ 2024-09-01 20:16:02,166 ] 97 werkzeug - INFO - 127.0.0.1 - - [01/Sep/2024 20:16:02] "[35m[1mPOST /url_classifier HTTP/1.1[0m" 500 -
+[ 2024-09-01 20:16:36,896 ] 97 werkzeug - INFO - 127.0.0.1 - - [01/Sep/2024 20:16:36] "[35m[1mPOST /url_classifier HTTP/1.1[0m" 500 -
+[ 2024-09-01 20:17:20,351 ] 97 werkzeug - INFO - 127.0.0.1 - - [01/Sep/2024 20:17:20] "GET /predict HTTP/1.1" 200 -
+[ 2024-09-01 20:17:20,370 ] 97 werkzeug - INFO - 127.0.0.1 - - [01/Sep/2024 20:17:20] "GET /static/css/style.css HTTP/1.1" 200 -
+[ 2024-09-01 20:17:20,392 ] 97 werkzeug - INFO - 127.0.0.1 - - [01/Sep/2024 20:17:20] "[33mGET /script.js HTTP/1.1[0m" 404 -
+[ 2024-09-01 20:17:25,093 ] 97 werkzeug - INFO - 127.0.0.1 - - [01/Sep/2024 20:17:25] "GET /url_classifier HTTP/1.1" 200 -

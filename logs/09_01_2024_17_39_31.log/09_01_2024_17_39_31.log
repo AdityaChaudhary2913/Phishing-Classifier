@@ -1,0 +1,38 @@
+[ 2024-09-01 17:39:32,329 ] 97 werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.22.59.15:8080
+[ 2024-09-01 17:39:32,329 ] 97 werkzeug - INFO - [33mPress CTRL+C to quit[0m
+[ 2024-09-01 17:39:32,329 ] 97 werkzeug - INFO -  * Restarting with stat
+[ 2024-09-01 17:40:14,313 ] 97 werkzeug - INFO -  * Restarting with stat
+[ 2024-09-01 17:42:50,083 ] 97 werkzeug - INFO -  * Restarting with stat
+[ 2024-09-01 17:46:07,451 ] 97 werkzeug - INFO -  * Restarting with stat
+[ 2024-09-01 17:46:13,334 ] 97 werkzeug - INFO -  * Restarting with stat
+[ 2024-09-01 17:46:19,012 ] 97 werkzeug - INFO -  * Restarting with stat
+[ 2024-09-01 17:48:12,374 ] 97 werkzeug - INFO -  * Restarting with stat
+[ 2024-09-01 17:48:15,215 ] 97 werkzeug - INFO -  * Restarting with stat
+[ 2024-09-01 17:48:18,776 ] 97 werkzeug - INFO -  * Restarting with stat
+[ 2024-09-01 17:48:23,465 ] 97 werkzeug - INFO -  * Restarting with stat
+[ 2024-09-01 17:48:26,968 ] 97 werkzeug - INFO -  * Restarting with stat
+[ 2024-09-01 17:50:04,802 ] 97 werkzeug - INFO -  * Restarting with stat
+[ 2024-09-01 17:50:10,687 ] 97 werkzeug - INFO -  * Restarting with stat
+[ 2024-09-01 17:50:23,510 ] 97 werkzeug - INFO -  * Restarting with stat
+[ 2024-09-01 17:50:32,462 ] 97 werkzeug - INFO -  * Restarting with stat
+[ 2024-09-01 17:50:36,027 ] 97 werkzeug - INFO -  * Restarting with stat
+[ 2024-09-01 17:50:40,630 ] 97 werkzeug - INFO -  * Restarting with stat
+[ 2024-09-01 17:50:47,184 ] 97 werkzeug - INFO -  * Restarting with stat
+[ 2024-09-01 17:54:38,855 ] 97 werkzeug - INFO -  * Restarting with stat
+[ 2024-09-01 17:54:46,820 ] 97 werkzeug - INFO -  * Restarting with stat
+[ 2024-09-01 17:54:50,771 ] 97 werkzeug - INFO -  * Restarting with stat
+[ 2024-09-01 17:54:53,397 ] 97 werkzeug - INFO -  * Restarting with stat
+[ 2024-09-01 17:55:18,782 ] 97 werkzeug - INFO -  * Restarting with stat
+[ 2024-09-01 17:55:23,726 ] 97 werkzeug - INFO -  * Restarting with stat
+[ 2024-09-01 17:56:01,428 ] 97 werkzeug - INFO -  * Restarting with stat
+[ 2024-09-01 17:56:06,217 ] 97 werkzeug - INFO -  * Restarting with stat
+[ 2024-09-01 17:56:14,890 ] 97 werkzeug - INFO -  * Restarting with stat
+[ 2024-09-01 17:56:21,593 ] 97 werkzeug - INFO -  * Restarting with stat
+[ 2024-09-01 17:56:25,124 ] 97 werkzeug - INFO -  * Restarting with stat
+[ 2024-09-01 17:56:46,357 ] 97 werkzeug - INFO -  * Restarting with stat
+[ 2024-09-01 17:57:26,290 ] 97 werkzeug - INFO -  * Restarting with stat
+[ 2024-09-01 17:57:32,176 ] 97 werkzeug - INFO -  * Restarting with stat
+[ 2024-09-01 17:57:35,726 ] 97 werkzeug - INFO -  * Restarting with stat

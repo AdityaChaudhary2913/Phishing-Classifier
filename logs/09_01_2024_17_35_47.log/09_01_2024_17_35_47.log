@@ -1,0 +1,8 @@
+[ 2024-09-01 17:35:48,404 ] 97 werkzeug - WARNING -  * Debugger is active!
+[ 2024-09-01 17:35:48,414 ] 97 werkzeug - INFO -  * Debugger PIN: 119-654-287
+[ 2024-09-01 17:35:50,272 ] 97 werkzeug - INFO - 127.0.0.1 - - [01/Sep/2024 17:35:50] "GET /url_classifier HTTP/1.1" 200 -
+[ 2024-09-01 17:35:56,395 ] 34 root - INFO - Entered predict method of VisibilityModel class
+[ 2024-09-01 17:35:56,396 ] 36 root - INFO - Using the trained model to get predictions
+[ 2024-09-01 17:35:56,400 ] 38 root - INFO - Used the trained model to get predictions
+[ 2024-09-01 17:35:56,403 ] 97 werkzeug - INFO - 127.0.0.1 - - [01/Sep/2024 17:35:56] "POST /url_classifier HTTP/1.1" 200 -
+[ 2024-09-01 17:36:35,945 ] 97 werkzeug - INFO -  * Detected change in '/Users/adityachaudhary/Desktop/Important Projects/Data Science/Phishing-Classifier/app.py', reloading

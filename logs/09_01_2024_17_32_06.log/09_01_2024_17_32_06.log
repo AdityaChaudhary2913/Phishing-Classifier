@@ -1,0 +1,5 @@
+[ 2024-09-01 17:32:08,107 ] 97 werkzeug - WARNING -  * Debugger is active!
+[ 2024-09-01 17:32:08,115 ] 97 werkzeug - INFO -  * Debugger PIN: 119-654-287
+[ 2024-09-01 17:32:09,439 ] 97 werkzeug - INFO - 127.0.0.1 - - [01/Sep/2024 17:32:09] "GET /url_classifier HTTP/1.1" 200 -
+[ 2024-09-01 17:32:15,580 ] 97 werkzeug - INFO - 127.0.0.1 - - [01/Sep/2024 17:32:15] "[35m[1mPOST /url_classifier HTTP/1.1[0m" 500 -
+[ 2024-09-01 17:32:45,396 ] 97 werkzeug - INFO -  * Detected change in '/Users/adityachaudhary/Desktop/Important Projects/Data Science/Phishing-Classifier/app.py', reloading
