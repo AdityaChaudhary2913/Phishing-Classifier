@@ -254,8 +254,9 @@ def home():
 @app.route("/train")
 def train_route():
     try:
-        train_pipeline = TrainingPipeline()
-        train_pipeline.run_pipeline()
+        if not model:
+            train_pipeline = TrainingPipeline()
+            train_pipeline.run_pipeline()
         return render_template('training.html')
     except Exception as e:
         raise CustomException(e,sys)
