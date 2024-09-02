@@ -119,7 +119,7 @@ sip @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_ba9odc
 six @ file:///tmp/build/80754af9/six_1644875935023/work
 sniffio @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_1573pknjrg/croot/sniffio_1705431298885/work
 soupsieve @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_9798xzs_03/croot/soupsieve_1696347567192/work
--e git+https://github.com/AdityaTheJaat/Phishing-Classifier.git@2f7805ab6c48665df171605a5a87fdb2983616d8#egg=src
+-e git+https://github.com/AdityaTheJaat/Phishing-Classifier.git@5e9ec883cd3edbc868c12a25a1eb2b513fb8c4fb#egg=src
 stack-data @ file:///opt/conda/conda-bld/stack_data_1646927590127/work
 terminado @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_fcfvyc0an2/croot/terminado_1671751835701/work
 threadpoolctl==3.5.0
@@ -134,6 +134,7 @@ wcwidth @ file:///Users/ktietz/demo/mc3/conda-bld/wcwidth_1629357192024/work
 webencodings==0.5.1
 websocket-client @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_d37u7gqts8/croot/websocket-client_1715878310260/work
 Werkzeug==3.0.3
+whois==0.9.27
 widgetsnbextension @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_b5bomtx272/croot/widgetsnbextension_1709322879675/work
 xgboost==2.1.1
 zipp @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_31jm3q76eq/croot/zipp_1704206913245/work
