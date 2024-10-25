@@ -1,7 +1,8 @@
-from flask import Flask, render_template, url_for, request, send_file, jsonify
+from flask import Flask, render_template, url_for, request, session, send_file, jsonify, redirect
 from src.exception import CustomException
 from src.logger import logging as lg
 import sys
+import os
 from joblib import load
 import pandas as pd
 from src.utils.extract_features import ExtractFeatures
@@ -9,7 +10,19 @@ from src.utils.extract_features import ExtractFeatures
 from src.pipeline.train_pipeline import TrainingPipeline
 from src.pipeline.predict_pipeline import PredictionPipeline
 
+from pymongo import MongoClient
+
+
 app = Flask(__name__)
+app.secret_key = os.getenv("SessionSecretKey")
+
+
+# MongoDB Atlas connection
+client = MongoClient(os.getenv("MONGODB_URL") )
+db = client['phishing']
+
+ADMIN_ID = os.getenv("AdminID")
+ADMIN_PASSWORD = os.getenv("AdminPassword")
 
 try:    
     model = load('trained_model/model.pkl')
@@ -22,6 +35,8 @@ def home():
 
 @app.route("/train")
 def train_route():
+    if not session.get('admin_logged_in'):
+        return redirect(url_for('home')) 
     try:
         if not model:
             train_pipeline = TrainingPipeline()
@@ -30,6 +45,26 @@ def train_route():
     except Exception as e:
         raise CustomException(e,sys)
 
+
+@app.route("/admin_login", methods=['POST'])
+def admin_login():
+    data = request.get_json()
+    admin_id = data.get('adminID')
+    admin_password = data.get('adminPassword')
+
+    if admin_id == ADMIN_ID and admin_password == ADMIN_PASSWORD:
+        session['admin_logged_in'] = True
+        return jsonify(success=True)
+    else:
+        session['admin_logged_in'] = False
+        return jsonify(success=False)
+
+@app.route("/logout")
+def logout():
+    session['admin_logged_in'] = False
+    session.pop('admin_logged_in', None)
+    return redirect(url_for('home'))
+
 @app.route("/url_classifier", methods=['POST', 'GET'])
 def url_classifier():
     if request.method == 'POST':
@@ -37,6 +72,10 @@ def url_classifier():
         url = data.get('url')
         if not url:
             return jsonify(error="Please enter a URL"), 400
+        
+        # Check if the URL has already been classified
+        existing_entry = db['classified_urls'].find_one({'url': url})
+        
         object = ExtractFeatures()
         object.extract_features(url)
         feature_names = [
@@ -52,10 +91,33 @@ def url_classifier():
         # features = [1,0,-1,1,1,-1,1,1,-1,1,1,-1,1,0,1,-1,1,1,0,1,1,1,1,1,-1,1,1,1,0,1]
         prediction = model.predict(features_df)[0]
         result = 'Phishing' if prediction == 0 else 'Legitimate'
+        
+        # Save to MongoDB
+        if not existing_entry:
+            db['classified_urls'].insert_one({'url': url, 'result': result})
+        
         return jsonify(result=result, url=url)
     
     # For GET requests or page load
     return render_template('url_classifier.html')
+
+@app.route("/report_incorrect", methods=['POST'])
+def report_incorrect():
+    data = request.get_json()
+    url = data.get('url')
+    result = data.get('result').split(" ")[-1]
+    
+    # Check if the URL already exists in the 'reported_urls' collection
+    existing_report = db['reported_urls'].find_one({'url': url})
+    
+    if existing_report:
+        return jsonify(message="This URL has already been reported."), 200
+
+    # Save reported URL in a different collection
+    db['reported_urls'].insert_one({'url': url, 'reported_result': result})
+    
+    return jsonify(message="Reported successfully"), 200
+
 
 @app.route('/predict', methods=['POST', 'GET'])
 def predict():

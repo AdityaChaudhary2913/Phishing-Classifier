@@ -57,10 +57,62 @@
         {% if name %}
             <a href="{{ url_for('url_classifier') }}" id="status" class="button" onclick="">Model is Trained</a>
         {% else %}
-            <a href="{{ url_for('train_route') }}" id="status" class="button" onclick="displayTrainingMessage()">Train the Model</a>
+            <a id="status" class="button" onclick="showAdminModal()">Train the Model</a>
         {% endif %}
         <a href="{{ url_for('predict') }}" class="button">Classify CSV file</a>
         <a href="{{ url_for('url_classifier') }}" class="button">Classify URL</a>
+        <div id="adminModal" style="display: none;">
+            <div class="modal-content">
+                <h2>Admin Login</h2>
+                <label for="adminID">Admin ID:</label>
+                <input type="text" id="adminID" placeholder="Enter Admin ID">
+                <br>
+                <label for="adminPassword">Password:</label>
+                <input type="password" id="adminPassword" placeholder="Enter Password">
+                <br>
+                <button onclick="submitAdminLogin()">Submit</button>
+                <button onclick="closeModal()">Cancel</button>
+            </div>
+        </div>
+        <a href="{{ url_for('logout') }}" id="logout" class="button" style="display: none;">Logout</a>
     </div>
+    <script>
+        // Show the modal when "Train Model" button is clicked
+        function showAdminModal() {
+            document.getElementById("adminModal").style.display = "block";
+            document.getElementById('adminID').value = '';
+            document.getElementById('adminPassword').value = '';
+        }
+
+        // Close the modal
+        function closeModal() {
+            document.getElementById("adminModal").style.display = "none";
+        }
+
+        // Submit admin login and check credentials
+        async function submitAdminLogin() {
+            const adminID = document.getElementById("adminID").value;
+            const adminPassword = document.getElementById("adminPassword").value;
+
+            const response = await fetch('/admin_login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ adminID: adminID, adminPassword: adminPassword }),
+            });
+
+            const data = await response.json();
+            if (data.success) {
+                // Credentials are correct, proceed to train the model
+                document.getElementById("logout").style.display = "block";
+                window.location.href = '/train';
+                displayTrainingMessage()
+            } else {
+                alert('Invalid Admin ID or Password');
+                closeModal();  // Close modal on failure
+            }
+        }
+    </script>
 </body>
 </html>

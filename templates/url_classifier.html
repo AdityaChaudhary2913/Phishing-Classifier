@@ -55,12 +55,15 @@
         <h1>Phishing URL Classifier</h1>
         <input type="text" id="urlInput" placeholder="Enter URL" />
         <button class="button" onclick="classifyURL()">Classify</button>
+        <br />
+        <button class="button" onclick="reportIncorrect()">Report Incorrect Classification</button>
         <p id="result">{{result}}</p>
     </div>
 
     <script>
         async function classifyURL() {
             const url = document.getElementById('urlInput').value;
+            document.getElementById('result').innerText = 'Processing your URL....';
             const response = await fetch('/url_classifier', {
                 method: 'POST',
                 headers: {
@@ -70,6 +73,24 @@
             });
             const data = await response.json();
             document.getElementById('result').innerText = `The URL: ${url} is ${data.result}`;
+        }
+        async function reportIncorrect() {
+            const url = document.getElementById('urlInput').value;
+            const result = document.getElementById('result').innerText;
+            if (!result.includes('The URL')) {
+                alert('Please classify a URL before reporting.');
+                return;
+            }
+
+            const response = await fetch('/report_incorrect', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ url: url, result: result })
+            });
+            const data = await response.json();  // Await the response JSON
+            alert(data.message);
         }
     </script>
 </body>
