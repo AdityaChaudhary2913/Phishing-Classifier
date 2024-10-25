@@ -11,12 +11,25 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.compose import ColumnTransformer
 from xgboost import XGBClassifier
 from sklearn.model_selection import GridSearchCV
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Input
+from scikeras.wrappers import KerasClassifier
 from src.constant import *
 from src.exception import CustomException
 from src.logger import logging
 from src.utils.main_utils import MainUtils
 
 from dataclasses import dataclass
+
+def create_ann_model():
+    model = Sequential()
+    model.add(Input(shape=(30,)))
+    model.add(Dense(128, activation='relu'))
+    model.add(Dense(64, activation='relu'))
+    model.add(Dense(32, activation='relu'))
+    model.add(Dense(1, activation='sigmoid'))  # Binary classification
+    model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+    return model
 
 @dataclass
 class ModelTrainerConfig:
@@ -55,7 +68,8 @@ class ModelTrainer:
             "XGBClassifier": XGBClassifier(objective='binary:logistic'),
             "LogisticRegression": LogisticRegression(),
             "RandomForestClassifier": RandomForestClassifier(),
-            "SVC": SVC()
+            "SVC": SVC(),
+            "ANN": KerasClassifier(model=create_ann_model(), epochs=50, batch_size=32)
         }
 
     def evaluate_models(self, X_train, X_test, y_train, y_test, models):
@@ -63,14 +77,20 @@ class ModelTrainer:
             report = {}
             for i in range(len(list(models))):
                 model = list(models.values())[i]
+                model_name = list(models.keys())[i]
+                
                 model.fit(X_train, y_train)  # Train model
+                
                 y_train_pred = model.predict(X_train)
                 y_test_pred = model.predict(X_test)
-                # train_model_score = accuracy_score(y_train, y_train_pred)
+                
+                train_model_score = accuracy_score(y_train, y_train_pred)*100
                 test_model_score = accuracy_score(y_test, y_test_pred)*100
-                model_name = list(models.keys())[i]
-                print(f"Accuracy of {model_name}: {test_model_score:.2f}%")
-                report[list(models.keys())[i]] = test_model_score
+                
+                print(f"\nTesting Accuracy of {model_name}: {test_model_score:.2f}%")
+                print(f"Training Accuracy of {model_name}: {train_model_score:.2f}%\n")
+                
+                report[model_name] = test_model_score
             return report
         except Exception as e:
             raise CustomException(e, sys)

@@ -94,7 +94,7 @@ def url_classifier():
         
         # Save to MongoDB
         if not existing_entry:
-            db['classified_urls'].insert_one({'url': url, 'result': result})
+            db['classified_urls'].insert_one({'url': url, 'result': result, 'features': object.features, 'verified': False})
         
         return jsonify(result=result, url=url)
     
@@ -112,9 +112,12 @@ def report_incorrect():
     
     if existing_report:
         return jsonify(message="This URL has already been reported."), 200
+    
+    object = ExtractFeatures()
+    object.extract_features(url)
 
     # Save reported URL in a different collection
-    db['reported_urls'].insert_one({'url': url, 'reported_result': result})
+    db['reported_urls'].insert_one({'url': url, 'reported_result': result, 'features': object.features, 'verified': False})
     
     return jsonify(message="Reported successfully"), 200
 

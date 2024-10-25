@@ -84,7 +84,7 @@ class DataValidation:
   def get_raw_batch_files_paths(self) -> List:
     try:
       raw_batch_files_names = os.listdir(self.raw_data_store_dir)
-      raw_batch_files_paths = [os.path.join(self.raw_data_store_dir, raw_batch_file_name) for raw_batch_file_name in raw_batch_files_names]
+      raw_batch_files_paths = [os.path.join(self.raw_data_store_dir, raw_batch_file_name) for raw_batch_file_name in raw_batch_files_names if raw_batch_file_name == 'dataset.csv' ]
       return raw_batch_files_paths
     except Exception as e:
       raise CustomException(e, sys)

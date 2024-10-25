@@ -82,3 +82,20 @@ model_selection:
           gamma:
             - 'scale'
             - 'auto'
+      
+      ANN:
+        search_param_grid:
+          epochs:
+            - 10
+            - 20
+            - 40
+            - 60
+          batch_size:
+            - 32
+            - 64
+          build_fn__layers:
+            - (128, 64, 32)
+            - (256, 128, 64)
+          build_fn__learning_rate:
+            - 0.01
+            - 0.001
