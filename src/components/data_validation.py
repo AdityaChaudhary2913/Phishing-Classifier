@@ -64,6 +64,7 @@ class DataValidation:
       return column_length_validation_status
     except Exception as e:
       raise CustomException(e, sys)
+    
   # This method validates if there is any column in the csv file which has all the values as null.
   def validate_missing_values_in_whole_column(self, file_path: str) -> bool:
     try:

@@ -2,15 +2,9 @@ import sys
 import os
 import pandas as pd
 import numpy as np
-from sklearn.compose import ColumnTransformer
 from sklearn.model_selection import train_test_split
-
 from sklearn.impute import SimpleImputer
-from sklearn.preprocessing import RobustScaler, FunctionTransformer
-from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from imblearn.over_sampling import RandomOverSampler
-
 from src.constant import *
 from src.exception import CustomException
 from src.logger import logging
@@ -54,7 +48,7 @@ class DataTransformation:
       X = dataframe.drop(columns=TARGET_COLUMN)
       y = np.where(dataframe[TARGET_COLUMN] == -1, 0, 1)
       
-      sampler = RandomOverSampler()
+      sampler = RandomOverSampler()         
       x_sampled, y_sampled = sampler.fit_resample(X, y)
       
       X_train, X_test, y_train, y_test = train_test_split(x_sampled, y_sampled, test_size=0.2)

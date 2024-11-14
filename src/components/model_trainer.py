@@ -1,5 +1,4 @@
 import sys
-from typing import Generator, List, Tuple
 import os
 import pandas as pd
 import numpy as np
@@ -12,7 +11,9 @@ from sklearn.compose import ColumnTransformer
 from xgboost import XGBClassifier
 from sklearn.model_selection import GridSearchCV
 from tensorflow.keras.models import Sequential
+import tensorflow.keras as tf
 from tensorflow.keras.layers import Dense, Input
+# from tensorflow.keras.layers import Embedding, SimpleRNN, LSTM, GRU
 from scikeras.wrappers import KerasClassifier
 from src.constant import *
 from src.exception import CustomException
@@ -20,6 +21,33 @@ from src.logger import logging
 from src.utils.main_utils import MainUtils
 
 from dataclasses import dataclass
+
+# # RNN Model
+# def create_rnn_model(input_shape):
+#     model = Sequential()
+#     model.add(Embedding(input_dim=1000, output_dim=64, input_length=input_shape))  # Adjust `input_dim` as needed
+#     model.add(SimpleRNN(64, activation='relu'))
+#     model.add(Dense(1, activation='sigmoid'))
+#     model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+#     return model
+
+# # LSTM Model
+# def create_lstm_model(input_shape):
+#     model = Sequential()
+#     model.add(Embedding(input_dim=1000, output_dim=64, input_length=input_shape))
+#     model.add(LSTM(64, activation='relu'))
+#     model.add(Dense(1, activation='sigmoid'))
+#     model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+#     return model
+
+# # GRU Model
+# def create_gru_model(input_shape):
+#     model = Sequential()
+#     model.add(Embedding(input_dim=1000, output_dim=64, input_length=input_shape))
+#     model.add(GRU(64, activation='relu'))
+#     model.add(Dense(1, activation='sigmoid'))
+#     model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+#     return model
 
 def create_ann_model():
     model = Sequential()
@@ -35,7 +63,7 @@ def create_ann_model():
 class ModelTrainerConfig:
     model_trainer_dir = os.path.join(artifact_folder, 'model_trainer')
     trained_model_path = os.path.join(model_trainer_dir, 'trained_model', "model.pkl")
-    expected_accuracy = 0.45
+    expected_accuracy = 0.75
     model_config_file_path = os.path.join('config', 'model.yaml')
 
 class VisibilityModel:
@@ -69,7 +97,10 @@ class ModelTrainer:
             "LogisticRegression": LogisticRegression(),
             "RandomForestClassifier": RandomForestClassifier(),
             "SVC": SVC(),
-            "ANN": KerasClassifier(model=create_ann_model(), epochs=50, batch_size=32)
+            "ANN": KerasClassifier(model=create_ann_model(), epochs=500, batch_size=32, callbacks=[tf.callbacks.EarlyStopping(monitor='loss', patience=5)]),
+            # "RNN": KerasClassifier(model=lambda: create_rnn_model(input_shape), epochs=50, batch_size=32),
+            # "LSTM": KerasClassifier(model=lambda: create_lstm_model(input_shape), epochs=50, batch_size=32),
+            # "GRU": KerasClassifier(model=lambda: create_gru_model(input_shape), epochs=50, batch_size=32)
         }
 
     def evaluate_models(self, X_train, X_test, y_train, y_test, models):
