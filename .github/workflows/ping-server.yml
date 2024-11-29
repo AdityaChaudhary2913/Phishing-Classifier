@@ -1,0 +1,27 @@
+name: Hourly Server Monitor
+
+on:
+  schedule:
+    # Runs the workflow every hour
+    - cron: "0 * * * *"
+  workflow_dispatch: # Allows manual triggering
+
+jobs:
+  monitor-server:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Start server monitoring
+      run: |
+        echo "Starting server monitoring for 60 minutes..."
+        for i in {1..12}; do
+          RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" https://phishing-classifier-xwp3.onrender.com/)
+          if [ "$RESPONSE" -ne 200 ]; then
+            echo "[$(date)] Server is down! HTTP Status: $RESPONSE"
+          else
+            echo "[$(date)] Server is up and running! HTTP Status: $RESPONSE"
+          fi
+          # Wait for 5 minutes before the next ping
+          sleep 120
+        done
+        echo "Monitoring complete."
