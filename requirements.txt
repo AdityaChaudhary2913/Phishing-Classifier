@@ -25,9 +25,9 @@ click==8.1.7
 contourpy==1.1.1
 cycler==0.12.1
 database_connect==0.1.673
-debugpy @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_563_nwtkoc/croot/debugpy_1690905063850/work
-decorator @ file:///opt/conda/conda-bld/decorator_1643638310831/work
-defusedxml @ file:///tmp/build/80754af9/defusedxml_1615228127516/work
+# debugpy @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_563_nwtkoc/croot/debugpy_1690905063850/work
+# decorator @ file:///opt/conda/conda-bld/decorator_1643638310831/work
+# defusedxml @ file:///tmp/build/80754af9/defusedxml_1615228127516/work
 dnspython==2.6.1
 ensure==1.0.4
 # exceptiongroup @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_b2258scr33/croot/exceptiongroup_1706031391815/work
