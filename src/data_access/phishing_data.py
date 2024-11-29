@@ -5,9 +5,7 @@ from pymongo import MongoClient
 import numpy as np
 import pandas as pd
 from src.constant import *
-from src.configuration.mongo_db_connection import MongoDBClient
 from src.exception import CustomException
-from src.logger import logging
 import os
 
 class PhishingData:

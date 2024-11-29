@@ -137,3 +137,15 @@ def predict():
     
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080, debug= True)
+    
+
+# http://paypal.com.cgi.bin.webscr.cmd.login.submit.dispatch.5885d80a13c03faee8dcbcd55a50598f04d34b4bf5tt1.mediareso.com/secure-code90/security/
+# https://paypal.com.us.cgi.bin.webscr.cmd.login.submit.bx3digitallp.com/Review/3a3e3c4dba5e5cc4407a5694adf1aa8e/
+
+# [http://google.com-redirect@valimail.com](http://google.com-redirect@valimail.com/)
+
+# [https://paypa1-login.com](https://paypa1-login.com/)
+
+# [https://googl-search-results.com](https://googl-search-results.com/)
+# [https://ebay-auction-alerts.com](https://ebay-auction-alerts.com/)
+# [https://amazo0n-secure-checkout.com](https://amazo0n-secure-checkout.com/)
