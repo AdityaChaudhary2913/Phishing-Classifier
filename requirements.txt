@@ -25,4 +25,6 @@ neuro-mf==0.0.5
 boto3==1.26.105
 gunicorn==23.0.0
 beautifulsoup4==4.12.3
+whois==0.9.27
+
 -e .
