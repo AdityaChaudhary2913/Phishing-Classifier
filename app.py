@@ -10,6 +10,8 @@ from src.utils.extract_features import ExtractFeatures
 from src.pipeline.train_pipeline import TrainingPipeline
 from src.pipeline.predict_pipeline import PredictionPipeline
 
+from src.constant import ADMIN_ID, ADMIN_PASSWORD
+
 from pymongo import MongoClient
 
 
@@ -21,13 +23,16 @@ app.secret_key = os.getenv("SessionSecretKey")
 client = MongoClient(os.getenv("MONGODB_URL") )
 db = client['phishing']
 
-ADMIN_ID = os.getenv("AdminID")
-ADMIN_PASSWORD = os.getenv("AdminPassword")
 
+
+model = None
+ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_PATH = os.path.join(ROOT_DIR, 'trained_model', 'model.pkl')
 try:    
-    model = load('trained_model/model.pkl')
+    model = load(MODEL_PATH)
 except Exception as e:
     model = None
+    print(e)
 
 @app.route("/")
 def home():

@@ -1,3 +1,0 @@
-[ 2024-08-31 21:49:28,259 ] 97 werkzeug - WARNING -  * Debugger is active!
-[ 2024-08-31 21:49:28,271 ] 97 werkzeug - INFO -  * Debugger PIN: 119-654-287
-[ 2024-08-31 21:49:32,396 ] 97 werkzeug - INFO -  * Detected change in '/Users/adityachaudhary/Desktop/Important Projects/Data Science/Phishing-Classifier/app.py', reloading

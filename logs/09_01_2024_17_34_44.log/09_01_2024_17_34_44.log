@@ -1,8 +1,0 @@
-[ 2024-09-01 17:34:45,328 ] 97 werkzeug - WARNING -  * Debugger is active!
-[ 2024-09-01 17:34:45,336 ] 97 werkzeug - INFO -  * Debugger PIN: 119-654-287
-[ 2024-09-01 17:34:45,917 ] 97 werkzeug - INFO - 127.0.0.1 - - [01/Sep/2024 17:34:45] "GET /url_classifier HTTP/1.1" 200 -
-[ 2024-09-01 17:34:49,008 ] 97 werkzeug - INFO - 127.0.0.1 - - [01/Sep/2024 17:34:49] "[35m[1mPOST /url_classifier HTTP/1.1[0m" 500 -
-[ 2024-09-01 17:35:10,121 ] 34 root - INFO - Entered predict method of VisibilityModel class
-[ 2024-09-01 17:35:10,122 ] 36 root - INFO - Using the trained model to get predictions
-[ 2024-09-01 17:35:10,129 ] 38 root - INFO - Used the trained model to get predictions
-[ 2024-09-01 17:35:10,134 ] 97 werkzeug - INFO - 127.0.0.1 - - [01/Sep/2024 17:35:10] "POST /url_classifier HTTP/1.1" 200 -

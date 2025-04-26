@@ -1,8 +1,0 @@
-[ 2024-08-31 22:24:57,857 ] 97 werkzeug - WARNING -  * Debugger is active!
-[ 2024-08-31 22:24:57,869 ] 97 werkzeug - INFO -  * Debugger PIN: 119-654-287
-[ 2024-08-31 22:25:01,948 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 22:25:01] "GET /url_classifier HTTP/1.1" 200 -
-[ 2024-08-31 22:25:05,988 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 22:25:05] "[35m[1mPOST /url_classifier HTTP/1.1[0m" 500 -
-[ 2024-08-31 22:25:13,945 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 22:25:13] "GET /url_classifier HTTP/1.1" 200 -
-[ 2024-08-31 22:25:14,912 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 22:25:14] "GET /url_classifier HTTP/1.1" 200 -
-[ 2024-08-31 22:25:16,174 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 22:25:16] "[35m[1mPOST /url_classifier HTTP/1.1[0m" 500 -
-[ 2024-08-31 22:25:16,903 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Aug/2024 22:25:16] "[35m[1mPOST /url_classifier HTTP/1.1[0m" 500 -
