@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classified URLs</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .table-hover tbody tr:hover { background-color: #f8f9fa; }
+        .badge-legit { background-color: #28a745; }
+        .badge-phish { background-color: #dc3545; }
+        .move-all-btn { margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><i class="fas fa-shield-alt me-2"></i>Admin Dashboard</a>
+            <div class="d-flex">
+                <a href="{{ url_for('admin_url_verification') }}" class="btn btn-outline-light">Reported URLs</a>
+                <a href="{{ url_for('home') }}" class="btn btn-outline-light">Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1 class="h4">Classified URLs</h1>
+            <button class="btn btn-primary move-all-btn" onclick="moveAllToDataset()">
+                <i class="fas fa-database me-2"></i>Move All to Dataset
+            </button>
+        </div>
+
+        <div class="table-responsive shadow-sm rounded">
+            <table class="table table-striped table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th>URL</th>
+                        <th>Classification</th>
+                        <th>Features Count</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for url in classified_urls %}
+                    <tr>
+                        <td class="text-truncate" style="max-width: 600px;">{{ url.url }}</td>
+                        <td>
+                            {% if url.result == 'Legitimate' %}
+                                <span class="badge badge-legit">{{ url.result }}</span>
+                            {% else %}
+                                <span class="badge badge-phish">{{ url.result }}</span>
+                            {% endif %}
+                        </td>
+                        <td>{{ url.features|length }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function moveAllToDataset() {
+            if (!confirm('Are you sure you want to move ALL classified URLs to the dataset?')) return;
+            
+            fetch('/admin/move_to_dataset', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) window.location.reload();
+                else alert(data.message || 'Error occurred');
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Operation failed');
+            });
+        }
+
+        // Auto-move trigger
+        document.addEventListener('DOMContentLoaded', function() {
+            {% if lngth >= 1000 %}
+                if (confirm('Automatically move {{ length }} URLs to dataset?')) {
+                    moveAllToDataset();
+                }
+            {% endif %}
+        });
+    </script>
+</body>
+</html>
