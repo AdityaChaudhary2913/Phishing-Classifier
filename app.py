@@ -2,7 +2,8 @@ from flask import Flask, render_template, url_for, request, session, send_file, 
 from src.exception import CustomException
 from src.logger import logging as lg
 import sys
-import os
+import os, certifi
+from bson import ObjectId
 from joblib import load
 import pandas as pd
 from src.utils.extract_features import ExtractFeatures
@@ -14,6 +15,7 @@ from src.constant import ADMIN_ID, ADMIN_PASSWORD
 
 from pymongo import MongoClient
 
+os.environ.setdefault("SSL_CERT_FILE", certifi.where())
 
 app = Flask(__name__)
 app.secret_key = os.getenv("SessionSecretKey")
@@ -99,7 +101,7 @@ def url_classifier():
         
         # Save to MongoDB
         if not existing_entry:
-            db['classified_urls'].insert_one({'url': url, 'result': result, 'features': object.features, 'verified': False})
+            db['classified_urls'].insert_one({'url': url, 'result': result, 'features': object.features})
         
         return jsonify(result=result, url=url)
     
@@ -124,6 +126,10 @@ def report_incorrect():
     # Save reported URL in a different collection
     db['reported_urls'].insert_one({'url': url, 'reported_result': result, 'features': object.features, 'verified': False})
     
+    existing_entry_classified = db['classified_urls'].find_one({'url': url})
+    if existing_entry_classified:
+        db['classified_urls'].delete_one({'url': url})
+    
     return jsonify(message="Reported successfully"), 200
 
 
@@ -139,6 +145,125 @@ def predict():
             return render_template('prediction.html')
     except Exception as e:
         raise CustomException(e,sys)
+    
+@app.route("/admin/reported_urls")
+def admin_url_verification():
+    if not session.get('admin_logged_in'):
+        return redirect(url_for('home'))
+    reported_urls = list(db['reported_urls'].find({}))
+    for url in reported_urls:
+        url['_id'] = str(url['_id'])  # Convert ObjectId to string for template
+    return render_template('url_verification.html', reported_urls=reported_urls)
+
+@app.route("/admin/verify_url", methods=['POST'])
+def admin_verify_url():
+    if not session.get('admin_logged_in'):
+        return jsonify(success=False, message="Unauthorized"), 401
+    data = request.get_json()
+    url_id = data.get('url_id')
+    correct_result = data.get('correct_result')
+
+    if not url_id or correct_result not in ['Legitimate', 'Phishing']:
+        return jsonify(success=False, message="Invalid data"), 400
+
+    try:
+        # Fetch reported URL
+        reported_url = db.reported_urls.find_one({'_id': ObjectId(url_id)})
+        if not reported_url:
+            return jsonify(success=False, message="URL not found"), 404
+
+        # Remove from classified_urls if exists
+        db.classified_urls.delete_one({'url': reported_url['url']})
+
+        # Add to classified_urls
+        classified_entry = {
+            'url': reported_url['url'],
+            'result': correct_result,
+            'features': reported_url['features']
+        }
+        db.classified_urls.insert_one(classified_entry)
+
+        # Prepare dataset entry
+        feature_names = [
+            'having_IP_Address', 'URL_Length', 'Shortining_Service', 'having_At_Symbol',
+            'double_slash_redirecting', 'Prefix_Suffix', 'having_Sub_Domain', 'SSLfinal_State',
+            'Domain_registeration_length', 'Favicon', 'port', 'HTTPS_token',
+            'Request_URL', 'URL_of_Anchor', 'Links_in_tags', 'SFH', 'Submitting_to_email',
+            'Abnormal_URL', 'Redirect', 'on_mouseover', 'RightClick', 'popUpWidnow',
+            'Iframe', 'age_of_domain', 'DNSRecord', 'web_traffic', 'Page_Rank',
+            'Google_Index', 'Links_pointing_to_page', 'Statistical_report'
+        ]
+        features = reported_url['features']
+        if len(features) != len(feature_names):
+            return jsonify(success=False, message="Features mismatch"), 400
+
+        dataset_entry = {fn: features[i] for i, fn in enumerate(feature_names)}
+        dataset_entry['Result'] = 1 if correct_result == 'Legitimate' else 0
+
+        # Insert into dataset
+        db.dataset.insert_one(dataset_entry)
+
+        # Remove from reported_urls
+        db.reported_urls.delete_one({'_id': ObjectId(url_id)})
+
+        return jsonify(success=True, message="URL verified successfully")
+    except Exception as e:
+        return jsonify(success=False, message=str(e)), 500
+    
+@app.route("/admin/classified_urls")
+def admin_classified_urls():
+    if not session.get('admin_logged_in'):
+        return redirect(url_for('home'))
+    
+    classified_urls = list(db.classified_urls.find({}))
+    length = len(classified_urls)
+    for url in classified_urls:
+        url['_id'] = str(url['_id'])
+    return render_template('classifydb_to_dataset.html', classified_urls=classified_urls, lngth=length)
+
+@app.route("/admin/move_to_dataset", methods=['POST'])
+def move_to_dataset():
+    if not session.get('admin_logged_in'):
+        return jsonify(success=False, message="Unauthorized"), 401
+
+    try:
+        # Get all classified URLs
+        classified_urls = list(db.classified_urls.find({}))
+        
+        # Prepare feature names (should match your dataset schema)
+        feature_names = [
+            'having_IP_Address', 'URL_Length', 'Shortining_Service', 'having_At_Symbol',
+            'double_slash_redirecting', 'Prefix_Suffix', 'having_Sub_Domain', 'SSLfinal_State',
+            'Domain_registeration_length', 'Favicon', 'port', 'HTTPS_token',
+            'Request_URL', 'URL_of_Anchor', 'Links_in_tags', 'SFH', 'Submitting_to_email',
+            'Abnormal_URL', 'Redirect', 'on_mouseover', 'RightClick', 'popUpWidnow',
+            'Iframe', 'age_of_domain', 'DNSRecord', 'web_traffic', 'Page_Rank',
+            'Google_Index', 'Links_pointing_to_page', 'Statistical_report'
+        ]
+
+        # Convert classified URLs to dataset entries
+        dataset_entries = []
+        for url in classified_urls:
+            if len(url['features']) != len(feature_names):
+                continue  # Skip entries with mismatched features
+
+            entry = {fn: url['features'][i] for i, fn in enumerate(feature_names)}
+            entry['Result'] = 1 if url['result'] == 'Legitimate' else 0
+            dataset_entries.append(entry)
+
+        # Insert into dataset collection
+        if dataset_entries:
+            db.dataset.insert_many(dataset_entries)
+
+        # Delete all classified URLs
+        db.classified_urls.delete_many({})
+
+        return jsonify(
+            success=True,
+            message=f"Moved {len(dataset_entries)} URLs to dataset"
+        )
+    except Exception as e:
+        return jsonify(success=False, message=str(e)), 500
     
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080, debug= True)
