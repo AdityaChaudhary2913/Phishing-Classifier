@@ -25,10 +25,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 8080
 
 # Set environment variables
-ENV MONGODB_URL="mongodb+srv://aditya1306:aditya1306@phishingclassifier.y2fj1x3.mongodb.net/?retryWrites=true&w=majority&appName=PhishingClassifier"
-ENV AdminID="Aditya"
-ENV AdminPassword="Train"
-ENV SessionSecretKey="Token"
 
 # Run app.py when the container launches
 CMD ["python3", "app.py"]
