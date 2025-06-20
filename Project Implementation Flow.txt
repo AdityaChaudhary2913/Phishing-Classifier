@@ -10,5 +10,5 @@
 5. now we write in components folder
 6. Docker Image creation: `docker build -t aditya2913/phishing-classifier .`
 7. To pull the Docker Image: `docker pull aditya2913/phishing-classifier`
-8. To run the Docker Image: `docker run -p 8888:8080 aditya2913/phishing-classifier`
+8. To run the Docker Image: `docker run --env-file .env -p 8888:8080 aditya2913/phishing-classifier`
    Note: 8888 is the port number on which the application is running on our machine and 8080 is the port number on which the docker image is exposed.
