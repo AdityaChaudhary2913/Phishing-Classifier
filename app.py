@@ -2,7 +2,7 @@ from flask import Flask, render_template, url_for, request, session, send_file, 
 from src.exception import CustomException
 from src.logger import logging as lg
 import sys
-import os
+import os, certifi
 from bson import ObjectId
 from joblib import load
 import pandas as pd
@@ -15,6 +15,7 @@ from src.constant import ADMIN_ID, ADMIN_PASSWORD
 
 from pymongo import MongoClient
 
+os.environ.setdefault("SSL_CERT_FILE", certifi.where())
 
 app = Flask(__name__)
 app.secret_key = os.getenv("SessionSecretKey")
