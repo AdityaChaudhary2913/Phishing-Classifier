@@ -154,15 +154,3 @@ docker run -e SessionSecretKey='...' -e MONGODB_URL='...' -p 8080:8080 phishing-
 **Troubleshooting**
 - If `trained_model/model.pkl` is missing the app starts but `model` will be `None` and classification endpoints depending on it will fail; train a model first or provide a model file.
 - Check `MONGODB_URL` connectivity for admin features to work (reporting, moving to dataset).
-
-**License & Contact**
-- License: (not specified) — add a `LICENSE` file if you plan to open source this repository.
-- Questions / issues: open an issue in this repository or contact the author.
-
----
-
-If you want, I can now:
-- run a short scan to extract more exact dependency versions and commands from the code
-- add example `curl` snippets for each endpoint and an example `.env.template`
-- commit the README update to the repository branch
-
